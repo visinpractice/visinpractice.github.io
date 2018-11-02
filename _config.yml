@@ -1,0 +1,57 @@
+
+title: VisInPractice
+email: vip@ieeevis.org
+baseurl: ""
+url: "http://www.visinpractice.rwth-aachen.de"
+
+description: > 
+  VisinPractice at IEEE VIS 2018, Berlin, Germany, October 22, 2018
+
+
+# Build settings
+markdown: kramdown
+
+gems: 
+  - jekyll-last-modified-at
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - misc
+
+# site setup
+collections: 
+  pages:
+    output: true
+    permalink: /:path:output_ext
+
+navigation:
+ - title: Home
+   url: index.html
+ #- title: Call for Participation
+ #  url: call-for-participation.html
+#  - title: Guide
+#    url: http://ieeevis.org/year/2017/info/overview-amp-topics/practitioner-guide/pg
+#  - title: Workshop
+#    url: workshop.html
+#  - title: Panel
+#    url: panel.html
+#  - title: Supporters
+#    url: supporters.html
+#  - title: Important Dates
+#    url: important-dates.html
+ - title: VIS Practitioner Guide
+   url: guide.html
+ - title: Organization
+   url: organization.html
+ - title: Program
+   url: program.html
+ - title: Graphic Recording
+   url: graphic_record.html
+ - title: Call for Participation
+   url: cfp.html
+
+archive:
+- title: VisInPractice 2017
+  url: assets/vip2017/index.html
