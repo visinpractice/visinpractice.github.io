@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang=" en ">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>VisInPractice – Disclaimer</title>
+  <meta name="description" content="Impressum">
+
+  <link rel="stylesheet" href="assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/disclaimer.html">
+</head>
+
+
+<body>
+
+  <header>
+    <aside>
+      <img id="vip-logo" src="assets/logo-vip.png" />
+    </aside>
+    <article>
+      <svg id='header_svg'></svg>
+      <script src="https://d3js.org/d3.v4.min.js"></script>     
+      <script>
+
+        var svg_width = +d3.select('article').style('width').substring(0, 3);
+        // +d3.select('aside').style('width').substring(0, 3) == +d3.select('article').style('width').substring(0, 3) ? window.innerWidth - 70 : window.innerWidth - 290;
+        var numcols = svg_width >= 1080 ? 40 : svg_width >= 720 ? 30 : svg_width >= 320 ? 20 :15;
+
+        window.addEventListener('load', function() { 
+          svg_width = +d3.select('article').style('width').substring(0, 3);
+          // var svg_width = +d3.select('aside').style('width').substring(0, 3) == +d3.select('article').style('width').substring(0, 3) ? window.innerWidth - 70 : window.innerWidth - 290;
+          numcols = svg_width >= 1080 ? 40 : svg_width >= 720 ? 30 : svg_width >= 320 ? 20 :15;
+          d3.select("#header_svg")
+          .attr('width',svg_width)
+          .attr('height', (svg_width / numcols) * 4);
+        }); 
+
+        var color_scale = d3.scaleLinear()
+        .domain([0,8,16])
+        .range([d3.lab("#999999"),d3.lab("#ffffbf"),d3.lab("#fc8d59")])
+        .interpolate(d3.interpolateLab);
+
+        var grid = [],
+            text = [["V","I","S"],["I","N"],["P","R","A","C","T","I","C","E"],["2","0","1","8"]],
+            i,
+            j;
+        for (i = 0; i < 4; i++) {
+          for (j = 0; j < numcols; j++) {
+            var grid_item = {
+              "row":i,
+              "column":j,
+              "fill_value": color_scale( Math.floor(Math.random()*16) ),
+              "char": j >= text[i].length ? "" : text[i][j]
+            };
+            grid.push(grid_item);
+          }
+        }
+
+        var grid_item = d3.select("#header_svg")
+            .selectAll(".grid_item")          
+            .data(grid);
+
+        var grid_item_exit = grid_item.exit()
+        .remove();
+
+        var grid_item_enter = grid_item.enter()
+        .append("g")
+        .attr("class","grid_item")
+        .attr("id", function (d) {
+          return "grid_item_" + d.row + "_" + d.column;
+        })
+        .merge(grid_item);
+
+        grid_item_enter.append('rect')
+        .style('stroke','transparent')
+        .style('stroke-width','1px')
+        .attr('width', d3.max([0,svg_width / numcols - 2]))
+        .attr('height', d3.max([0,svg_width / numcols - 2]))
+        .style('fill', function(d){          
+          return d.char != "" ? '#ffffbf' : color_scale( Math.floor(Math.random()*16) );
+        })
+        .attr('x', function(d){
+          return (svg_width / numcols) * d.column;
+        })
+        .attr('y', function(d){
+          return (svg_width / numcols) * d.row;
+        });
+
+        grid_item_enter.append('text')  
+        .attr('text-anchor', "middle")
+        .attr('alignment-baseline','middle')  
+        .attr('dy','0.15em')
+        .attr('x', function(d){
+          return (svg_width / numcols) * d.column + (svg_width / numcols) * 0.5;
+        })
+        .attr('y', function(d){
+          return (svg_width / numcols) * d.row + (svg_width / numcols) * 0.5;
+        })
+        .style('font-size', (d3.max([1,svg_width / numcols - 2]) - 1) + 'px')
+        .text(function(d){
+          return d.char;
+        });
+
+        function update () {
+
+          grid = [];
+          text = [["V","I","S"],["I","N"],["P","R","A","C","T","I","C","E"],["2","0","1","8"]];
+          for (i = 0; i < 4; i++) {
+            for (j = 0; j < numcols; j++) {
+              var grid_item = {
+                "row":i,
+                "column":j,
+                "fill_value": color_scale( Math.floor(Math.random()*16) ),
+                "char": j >= text[i].length ? "" : text[i][j]
+              };
+              grid.push(grid_item);
+            }
+          }
+
+          d3.select("#header_svg")
+          .attr('width',svg_width)
+          .attr('height', (svg_width / numcols) * 4);
+
+          var grid_item_update = d3.selectAll(".grid_item")
+          .transition()          
+          .duration(3000)
+          .ease(d3.easeCubicInOut);
+          
+          grid_item_update.select('rect')          
+          .attr('width', d3.max([0,svg_width / numcols - 2]))
+          .attr('height', d3.max([0,svg_width / numcols - 2]))
+          .style('fill', function(d){
+            return d.char != "" ? '#ffffbf' : color_scale( Math.floor(Math.random()*16) );
+          })
+          .attr('x', function(d){
+            return (svg_width / numcols) * d.column;
+          })
+          .attr('y', function(d){
+            return (svg_width / numcols) * d.row;
+          });  
+
+          grid_item_update.select('text')  
+          .attr('text-anchor', "middle")
+          .attr('alignment-baseline','middle')  
+          .attr('dy','0.15em')
+          .attr('x', function(d){
+            return (svg_width / numcols) * d.column + (svg_width / numcols) * 0.5;
+          })
+          .attr('y', function(d){
+            return (svg_width / numcols) * d.row + (svg_width / numcols) * 0.5;
+          })
+          .style('font-size', (d3.max([1,svg_width / numcols - 2]) - 1) + 'px')
+          .text(function(d){
+            return d.char;
+          });
+        }
+
+        window.onresize = function(e) {
+
+          svg_width = +d3.select('article').style('width').substring(0, 3);
+          // svg_width = +d3.select('aside').style('width').substring(0, 3) == +d3.select('article').style('width').substring(0, 3) ? window.innerWidth - 70 : window.innerWidth - 290;
+          numcols = svg_width >= 1080 ? 40 : svg_width >= 720 ? 30 : svg_width >= 320 ? 20 :15;
+          update();
+        };   
+
+        d3.interval(function() {
+          update();
+        }, 4000);
+
+      </script>
+    </article>
+  </header>
+
+  <main>
+    <aside>
+      <nav>
+  <h1>Menu</h1>
+  <ul>
+     
+     
+    
+    <li class="">
+      <a href="index.html">Home</a>
+    </li>
+     
+     
+    
+    <li class="">
+      <a href="guide.html">VIS Practitioner Guide</a>
+    </li>
+     
+     
+    
+    <li class="">
+      <a href="organization.html">Organization</a>
+    </li>
+     
+     
+    
+    <li class="">
+      <a href="program.html">Program</a>
+    </li>
+     
+     
+    
+    <li class="">
+      <a href="graphic_record.html">Graphic Recording</a>
+    </li>
+     
+     
+    
+    <li class="">
+      <a href="cfp.html">Call for Participation</a>
+    </li>
+    
+    <li>
+      <a href="http://twitter.com/visinpractice">@visinpractice</a>
+    </li>
+    <li>
+      <a href="mailto:vip@ieeevis.org">Contact</a>
+    </li>
+  </ul>
+  <h1>Archive</h1>
+  <ul>
+     
+     
+    
+    <li class="">
+      <a href="assets/vip2017/index.html">VisInPractice 2017</a>
+    </li>
+    
+  </ul>
+  
+</nav>
+      <hr />
+      
+      <h1 id="important-dates">Important dates</h1>
+
+<dl>
+  <dt>IEEE VIS Early Registration</dt>
+  <dd>September 7, 2018</dd>
+  <dt>VisInPractice at IEEE VIS</dt>
+  <dd>October 22, 2018</dd>
+</dl>
+
+<h2 id="mini-symposium-talk-submissions">Mini-Symposium Talk Submissions</h2>
+
+<dl>
+  <dt>Talk Submission</dt>
+  <dd>June 30, 2018</dd>
+  <dt>Speaker Notification</dt>
+  <dd>July 31, 2018</dd>
+</dl>
+
+<!-- ## Workshop
+
+Half-day workshop
+: October 2, 2017
+
+## Panel
+
+Increasing the Impact of Visualization Research
+: October 3, 2017
+
+## Posters
+
+VIS main poster session
+: October 4, 2017 -->
+
+    </aside>
+    <article>
+      <h1 id="impressum">Impressum</h1>
+
+<p>Angaben gemäß § 5 TMG</p>
+
+<p>Bernd Hentschel<br />
+Lehr- und Forschungsgebiet Virtuelle Realität und Immersive Visualisierung<br />
+RWTH Aachen University<br />
+Seffenter Weg 23<br />
+52074 Aachen</p>
+
+<p>Vertreten durch:</p>
+
+<p>Die IEEE VisInPractice Co-Chairs 2018:</p>
+<ul>
+  <li>Matthew Brehmer (Microsoft Research)</li>
+  <li>Bernd Hentschel (RWTH Aachen University)</li>
+  <li>Daniela Oelke (Siemens Research)</li>
+</ul>
+
+<p>Kontakt:
+Telefon: +49 241 80 24921<br />
+Fax: +49 241 80 6 24921<br />
+E-Mail: hentschel@vr.rwth-aachen.de</p>
+
+<h1 id="haftungsausschluss">Haftungsausschluss</h1>
+
+<h2 id="haftung-für-inhalte">Haftung für Inhalte</h2>
+
+<p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+<h2 id="haftung-für-links">Haftung für Links</h2>
+
+<p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+<h2 id="urheberrecht">Urheberrecht</h2>
+
+<p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+
+<h2 id="datenschutz">Datenschutz</h2>
+
+<p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
+Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</p>
+
+<p><em>Website Impressum von impressum-generator.de</em></p>
+
+    </article>
+  </main>
+
+  <footer>
+    <aside>
+      Last update: Dec  7, 2018
+    </aside>
+    <article>
+       <span style="float: left; ">
+	   © 2018 VisInPractice, part of IEEE VIS 2018, Berlin, Germany, October 22, 2018. 
+	   </span>
+	   <span style="float: right;">
+	   <a href="disclaimer.html">Disclaimer</a>
+	   </span>
+    </article>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang=" en ">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>VisInPractice – Guide</title>
+  <meta name="description" content="The VIS 2018 Practitioner Guide">
+
+  <link rel="stylesheet" href="assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/guide.html">
+</head>
+
+
+<body>
+
+  <header>
+    <aside>
+      <img id="vip-logo" src="assets/logo-vip.png" />
+    </aside>
+    <article>
+      <svg id='header_svg'></svg>
+      <script src="https://d3js.org/d3.v4.min.js"></script>     
+      <script>
+
+        var svg_width = +d3.select('article').style('width').substring(0, 3);
+        // +d3.select('aside').style('width').substring(0, 3) == +d3.select('article').style('width').substring(0, 3) ? window.innerWidth - 70 : window.innerWidth - 290;
+        var numcols = svg_width >= 1080 ? 40 : svg_width >= 720 ? 30 : svg_width >= 320 ? 20 :15;
+
+        window.addEventListener('load', function() { 
+          svg_width = +d3.select('article').style('width').substring(0, 3);
+          // var svg_width = +d3.select('aside').style('width').substring(0, 3) == +d3.select('article').style('width').substring(0, 3) ? window.innerWidth - 70 : window.innerWidth - 290;
+          numcols = svg_width >= 1080 ? 40 : svg_width >= 720 ? 30 : svg_width >= 320 ? 20 :15;
+          d3.select("#header_svg")
+          .attr('width',svg_width)
+          .attr('height', (svg_width / numcols) * 4);
+        }); 
+
+        var color_scale = d3.scaleLinear()
+        .domain([0,8,16])
+        .range([d3.lab("#999999"),d3.lab("#ffffbf"),d3.lab("#fc8d59")])
+        .interpolate(d3.interpolateLab);
+
+        var grid = [],
+            text = [["V","I","S"],["I","N"],["P","R","A","C","T","I","C","E"],["2","0","1","8"]],
+            i,
+            j;
+        for (i = 0; i < 4; i++) {
+          for (j = 0; j < numcols; j++) {
+            var grid_item = {
+              "row":i,
+              "column":j,
+              "fill_value": color_scale( Math.floor(Math.random()*16) ),
+              "char": j >= text[i].length ? "" : text[i][j]
+            };
+            grid.push(grid_item);
+          }
+        }
+
+        var grid_item = d3.select("#header_svg")
+            .selectAll(".grid_item")          
+            .data(grid);
+
+        var grid_item_exit = grid_item.exit()
+        .remove();
+
+        var grid_item_enter = grid_item.enter()
+        .append("g")
+        .attr("class","grid_item")
+        .attr("id", function (d) {
+          return "grid_item_" + d.row + "_" + d.column;
+        })
+        .merge(grid_item);
+
+        grid_item_enter.append('rect')
+        .style('stroke','transparent')
+        .style('stroke-width','1px')
+        .attr('width', d3.max([0,svg_width / numcols - 2]))
+        .attr('height', d3.max([0,svg_width / numcols - 2]))
+        .style('fill', function(d){          
+          return d.char != "" ? '#ffffbf' : color_scale( Math.floor(Math.random()*16) );
+        })
+        .attr('x', function(d){
+          return (svg_width / numcols) * d.column;
+        })
+        .attr('y', function(d){
+          return (svg_width / numcols) * d.row;
+        });
+
+        grid_item_enter.append('text')  
+        .attr('text-anchor', "middle")
+        .attr('alignment-baseline','middle')  
+        .attr('dy','0.15em')
+        .attr('x', function(d){
+          return (svg_width / numcols) * d.column + (svg_width / numcols) * 0.5;
+        })
+        .attr('y', function(d){
+          return (svg_width / numcols) * d.row + (svg_width / numcols) * 0.5;
+        })
+        .style('font-size', (d3.max([1,svg_width / numcols - 2]) - 1) + 'px')
+        .text(function(d){
+          return d.char;
+        });
+
+        function update () {
+
+          grid = [];
+          text = [["V","I","S"],["I","N"],["P","R","A","C","T","I","C","E"],["2","0","1","8"]];
+          for (i = 0; i < 4; i++) {
+            for (j = 0; j < numcols; j++) {
+              var grid_item = {
+                "row":i,
+                "column":j,
+                "fill_value": color_scale( Math.floor(Math.random()*16) ),
+                "char": j >= text[i].length ? "" : text[i][j]
+              };
+              grid.push(grid_item);
+            }
+          }
+
+          d3.select("#header_svg")
+          .attr('width',svg_width)
+          .attr('height', (svg_width / numcols) * 4);
+
+          var grid_item_update = d3.selectAll(".grid_item")
+          .transition()          
+          .duration(3000)
+          .ease(d3.easeCubicInOut);
+          
+          grid_item_update.select('rect')          
+          .attr('width', d3.max([0,svg_width / numcols - 2]))
+          .attr('height', d3.max([0,svg_width / numcols - 2]))
+          .style('fill', function(d){
+            return d.char != "" ? '#ffffbf' : color_scale( Math.floor(Math.random()*16) );
+          })
+          .attr('x', function(d){
+            return (svg_width / numcols) * d.column;
+          })
+          .attr('y', function(d){
+            return (svg_width / numcols) * d.row;
+          });  
+
+          grid_item_update.select('text')  
+          .attr('text-anchor', "middle")
+          .attr('alignment-baseline','middle')  
+          .attr('dy','0.15em')
+          .attr('x', function(d){
+            return (svg_width / numcols) * d.column + (svg_width / numcols) * 0.5;
+          })
+          .attr('y', function(d){
+            return (svg_width / numcols) * d.row + (svg_width / numcols) * 0.5;
+          })
+          .style('font-size', (d3.max([1,svg_width / numcols - 2]) - 1) + 'px')
+          .text(function(d){
+            return d.char;
+          });
+        }
+
+        window.onresize = function(e) {
+
+          svg_width = +d3.select('article').style('width').substring(0, 3);
+          // svg_width = +d3.select('aside').style('width').substring(0, 3) == +d3.select('article').style('width').substring(0, 3) ? window.innerWidth - 70 : window.innerWidth - 290;
+          numcols = svg_width >= 1080 ? 40 : svg_width >= 720 ? 30 : svg_width >= 320 ? 20 :15;
+          update();
+        };   
+
+        d3.interval(function() {
+          update();
+        }, 4000);
+
+      </script>
+    </article>
+  </header>
+
+  <main>
+    <aside>
+      <nav>
+  <h1>Menu</h1>
+  <ul>
+     
+     
+    
+    <li class="">
+      <a href="index.html">Home</a>
+    </li>
+     
+     
+    
+    <li class="current">
+      <a href="guide.html">VIS Practitioner Guide</a>
+    </li>
+     
+     
+    
+    <li class="">
+      <a href="organization.html">Organization</a>
+    </li>
+     
+     
+    
+    <li class="">
+      <a href="program.html">Program</a>
+    </li>
+     
+     
+    
+    <li class="">
+      <a href="graphic_record.html">Graphic Recording</a>
+    </li>
+     
+     
+    
+    <li class="">
+      <a href="cfp.html">Call for Participation</a>
+    </li>
+    
+    <li>
+      <a href="http://twitter.com/visinpractice">@visinpractice</a>
+    </li>
+    <li>
+      <a href="mailto:vip@ieeevis.org">Contact</a>
+    </li>
+  </ul>
+  <h1>Archive</h1>
+  <ul>
+     
+     
+    
+    <li class="">
+      <a href="assets/vip2017/index.html">VisInPractice 2017</a>
+    </li>
+    
+  </ul>
+  
+</nav>
+      <hr />
+      
+      <h1 id="important-dates">Important dates</h1>
+
+<dl>
+  <dt>IEEE VIS Early Registration</dt>
+  <dd>September 7, 2018</dd>
+  <dt>VisInPractice at IEEE VIS</dt>
+  <dd>October 22, 2018</dd>
+</dl>
+
+<h2 id="mini-symposium-talk-submissions">Mini-Symposium Talk Submissions</h2>
+
+<dl>
+  <dt>Talk Submission</dt>
+  <dd>June 30, 2018</dd>
+  <dt>Speaker Notification</dt>
+  <dd>July 31, 2018</dd>
+</dl>
+
+<!-- ## Workshop
+
+Half-day workshop
+: October 2, 2017
+
+## Panel
+
+Increasing the Impact of Visualization Research
+: October 3, 2017
+
+## Posters
+
+VIS main poster session
+: October 4, 2017 -->
+
+    </aside>
+    <article>
+      <h1 id="the-vis-2018-practitioner-guide">The VIS 2018 Practitioner Guide</h1>
+
+<p>This guide presents a high-level guide to some of the most interesting <a href="http://ieeevis.org/year/2018/info/papers-sessions">technical sessions of the IEEE VIS 2018 conference</a>, with a particular emphasis on sessions that are of relevance to practitioners. For a complete list of conference sessions and the full conference program, please refere to <a href="http://ieeevis.org/">ieeevis.org</a> and their <a href="http://ieeevis.org/attachments/VIS2018_AAG.pdf">at-a-glance-schedule</a>.</p>
+
+<p>When preparing the practitioner guide, we incorporated the titles and abstracts of content appearing at this year’s conference as well as statements elicited from paper authors. In this way, we identified six practitioner interest groups, which also appear now throughout the VIS PDF and print program available at <a href="http://ieeevis.org/">ieeevis.org</a>:
+<span id="legend" class="anchor"></span></p>
+<ul>
+  <li>
+    <p><a target="" alt="All Practitioners" title="All Practitioners" href="#ap"><span class="guide">AP</span></a> - <a target="" alt="All Practitioners" title="All Practitioners" href="#ap">All Practitioners </a></p>
+  </li>
+  <li>
+    <p><a target="" alt="Biomedical Applications" title="Biomedical Applications" href="#ba"><span class="guide">BA</span></a> - <a target="" alt="Biomedical Applications" title="Biomedical Applications" href="#ba">Biomedical Applications</a></p>
+  </li>
+  <li>
+    <p><a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#ds"><span class="guide">DS</span></a> - <a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#ds">Data Science and Machine Learning</a></p>
+  </li>
+  <li>
+    <p><a target="" alt="User Experience, Human Factors, and Interaction Design" title="User Experience, Human Factors, and Interaction Design" href="#ux"><span class="guide">UX</span></a> - <a target="" alt="User Experience, Human Factors, and Interaction Design" title="User Experience, Human Factors, and Interaction Design" href="#ux">User Experience, Human Factors, and Interaction Design</a></p>
+  </li>
+  <li>
+    <p><a target="" alt="Data Journalism and News Graphics" title="Data Journalism and News Graphics" href="#dj"><span class="guide">DJ</span></a> - <a target="" alt="Data Journalism and News Graphics" title="Data Journalism and News Graphics" href="#dj">Data Journalism and News Graphics</a></p>
+  </li>
+  <li>
+    <p><a target="" alt="Simulation Science" title="Simulation Science" href="#ss"><span class="guide">SS</span></a> - <a target="" alt="Simulation Science" title="Simulation Science" href="#ss">Simulation Science</a></p>
+  </li>
+</ul>
+
+<p>Finally, along with indicating which sessions may be of interest to these pracititoner groups, we also produced high-level summaries of what pracitioners can expect to take away from these sessions:
+<span id="ap" class="anchor"></span></p>
+<hr />
+
+<h2 id="all-practitioners">All Practitioners</h2>
+<p><a target="" alt="All Practitioners" title="All Practitioners" href="#legend"><span class="guide">AP</span></a> <strong>Tutorial: Everything Except the Chart 2018</strong><br />
+<em>Sunday, October 21, 9:00 am - 12:40 pm, Room II</em></p>
+<ul>
+  <li><a href="http://ieeevis.org/year/2018/info/tutorials#Everything_except_chart">Tutorial information</a></li>
+</ul>
+
+<p><a target="" alt="All Practitioners" title="All Practitioners" href="#legend"><span class="guide">AP</span></a> <strong>Tutorial: Comparative Visualization: Interactive Designs and Algorithms Depending on Data and Tasks</strong><br />
+<em>Sunday, October 21, 2:20 pm - 6:00 pm, Estrel B</em></p>
+<ul>
+  <li><a href="http://ieeevis.org/year/2018/info/tutorials#Comparative_visualization">Tutorial information</a> (hint: you already found us.)</li>
+</ul>
+
+<p><a target="" alt="All Practitioners" title="All Practitioners" href="#legend"><span class="guide">AP</span></a> <strong>VisInPractice</strong><br />
+<em>Monday, October 22, 9:00 pm - 6:00 pm, Estrel A</em></p>
+<ul>
+  <li><a href="./program.html">Workshop program</a></li>
+</ul>
+
+<p><a target="" alt="All Practitioners" title="All Practitioners" href="#legend"><span class="guide">AP</span></a> <strong>VIS Welcome, VGTC Awards, Test of Time Awards, VIS Best Papers</strong><br />
+<em>Tuesday, October 23, 9:00 am - 11:00 am, Convention Hall 1, Section C + D</em></p>
+
+<p><a target="" alt="All Practitioners" title="All Practitioners" href="#legend"><span class="guide">AP</span></a> <strong>VIS Keynote: When Visualization Met Augmented Reality</strong><br />
+<em>Tuesday, October 23, 11:20 am - 12:40 pm, Convention Hall 1, Section C + D</em></p>
+<ul>
+  <li><a href="http://ieeevis.org/year/2018/keynote">Keynote information</a></li>
+</ul>
+
+<p><a target="" alt="All Practitioners" title="All Practitioners" href="#legend"><span class="guide">AP</span></a> <strong>VAST: Evaluation &amp; Theory</strong><br />
+<em>Tuesday, October 23, 2:05 pm - 4:00 pm, Convention Hall 1, Section C</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Get instructive guidance on which multi-dimensional data visualization technique to use for analyzing fuzzy clusters,</li>
+  <li>Learn about exploration experiences of professional data analysts and how this should inform the design of new tools,</li>
+  <li>Get to know a theory that can be used to evaluate and compare design options of a visualization application in a VR/VE platform, and to reason about its merits and demerits.</li>
+</ul>
+
+<p><a target="" alt="All Practitioners" title="All Practitioners" href="#legend"><span class="guide">AP</span></a> <strong>InfoVis: Evaluation &amp; Applications</strong><br />
+<em>Tuesday, October 23, 4:20 pm - 6:00 pm, Convention Hall 1, Section D</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Learn about a new approach for assessing the value of visualizations,</li>
+  <li>Consider exploration diversity and pacing as metrics for improving the design of interactive visualizations for the web, so as to promote more open-ended exploratory behaviour,</li>
+  <li>Get informed about the state of the art with regards to visualizing cultural heritage collection data, for both communication and exploration,</li>
+  <li>See examples of applied visualization projects in two healthcare domains involving clinical data: type 1 diabetes treatment and genealogy.</li>
+</ul>
+
+<p><a target="" alt="All Practitioners" title="All Practitioners" href="#legend"><span class="guide">AP</span></a> <strong>VAST: Applications</strong><br />
+<em>Wednesday, October 24, 11:00 am - 12:40 pm, Convention Hall 1, Section C</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Know the main commercial visual analytics systems and what their strengths and weaknesses are,</li>
+  <li>Get to know a system that allows clinicians to store and interactively inspect complex data derived during clinical gait analysis, to include their own knowledge into the system and to share this knowledge with others,</li>
+  <li>Learn about the design process behind a successful, multi-site project in precision medicine.</li>
+</ul>
+
+<p><a target="" alt="All Practitioners" title="All Practitioners" href="#legend"><span class="guide">AP</span></a> <strong>InfoVis: Text &amp; Communication</strong><br />
+<em>Wednesday, October 24, 02:20 pm - 04:00 pm , Convention Hall 1, Section D</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Understand how visualization dashboards are used in practice,</li>
+  <li>Rethink the document reading experience with a new technique for integrating tables and contextual visualization into text,</li>
+  <li>Discover a new tool for interpreting and predicting the behavior of natural language models by way of input and internal state perturbation,</li>
+  <li>Find out what happens when convolutional neural networks (CNNs) are applied to the perception of visualization.</li>
+</ul>
+
+<p><a target="" alt="All Practitioners" title="All Practitioners" href="#legend"><span class="guide">AP</span></a> <strong>Posters + Networking + Hiring events</strong><br />
+<em>Wednesday, October 24, 5:20 pm - 7:00 pm, Foyers</em></p>
+
+<p><a target="" alt="All Practitioners" title="All Practitioners" href="#legend"><span class="guide">AP</span></a> <strong>Panel: Meet the Founders: How to Start and Sustain a Business in the Visualization Space</strong><br />
+<em>Thursday, October 25, 2:20 pm - 4:00 pm, Room IV</em></p>
+<ul>
+  <li><a href="http://ieeevis.org/year/2018/info/panels#founders">Panel information</a></li>
+</ul>
+
+<p><a target="" alt="All Practitioners" title="All Practitioners" href="#legend"><span class="guide">AP</span></a> <strong>VIS Capstone: Can I Believe What I See?—Information-Theoretic Algorithm Validation</strong><br />
+<em>Friday, October 26, 11:00 am - 12:00 pm, Convention Hall 1, Section C</em></p>
+<ul>
+  <li><a href="http://ieeevis.org/year/2018/capstone">Capstone information</a></li>
+</ul>
+
+<p><a target="" alt="All Practitioners" title="All Practitioners" href="#legend"><span class="guide">AP</span></a> <strong>VIS Closing</strong><br />
+<em>Friday, October 26, 12:00 pm - 12:30 pm, Convention Hall 1, Section C</em>
+<span id="ba" class="anchor"></span></p>
+<hr />
+
+<h2 id="biomedical-applications">Biomedical Applications</h2>
+<p><a target="" alt="Biomedical Applications" title="Biomedical Applications" href="#legend"><span class="guide">BA</span></a> <strong>Tutorial: Topological Data Analysis Made Easy with the Topology ToolKit (TTK)</strong><br />
+<em>Sunday, October 21, 2:20 pm - 6:00 pm, Paris Room</em></p>
+<ul>
+  <li><a href="http://ieeevis.org/year/2018/info/tutorials#Topology_toolkit">Tutorial information</a></li>
+</ul>
+
+<p><a target="" alt="Biomedical Applications" title="Biomedical Applications" href="#legend"><span class="guide">BA</span></a> <strong>BioVis Challenge</strong><br />
+<em>Monday, October 22, 9:00 am - 6:00 pm, Estrel B</em></p>
+<ul>
+  <li><a href="http://biovis.net/2018/ieeevis/">BioVis website</a></li>
+</ul>
+
+<p><a target="" alt="Biomedical Applications" title="Biomedical Applications" href="#legend"><span class="guide">BA</span></a> <strong>SciVis: Biological Applications</strong><br />
+<em>Tuesday, October 23, 4:20 pm - 6:00 pm, Estrel Hall A+B</em>
+<br />This session will focus on adavances in applied biomedical visualization. Among other things, practitioners will:</p>
+<ul>
+  <li>Learn about techniques for RNA and DNA design and analysis,</li>
+  <li>Get to know a system which facilitates the intuitive exploration of large molecular trajectories.</li>
+</ul>
+
+<p><a target="" alt="Biomedical Applications" title="Biomedical Applications" href="#legend"><span class="guide">BA</span></a> <strong>SciVis: Biomedical Visualization</strong><br />
+<em>Wednesday, October 24, 9:00 am - 10:40 am, Estrel Hall A+B</em>
+<br />In this session, attendees will:</p>
+<ul>
+  <li>Learn about visualization techniques which help assess and treat cerebral aneurisms,</li>
+  <li>See how visualization can lead to a better spatial understanding of tissue samples in clinical pathology,</li>
+  <li>Get to know new ways to study neuronal structures in the brain using wide-field microscopy images.</li>
+</ul>
+
+<p><a target="" alt="Biomedical Applications" title="Biomedical Applications" href="#legend"><span class="guide">BA</span></a>  <strong>VAST: Text</strong><br />
+<em>Wednesday, October 24, 9:00 am - 10:40 am, Estrel Hall C</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Gain knowledge on building visual text analytics tools and the opportunities to narrow the gulf between the visualization and text mining fields,</li>
+  <li>Get to know a visualization framework that aids readers in understanding and analyzing the contents of medium-sized text collections.</li>
+</ul>
+
+<p><a target="" alt="Biomedical Applications" title="Biomedical Applications" href="#legend"><span class="guide">BA</span></a>  <strong>CG&amp;A: Session 2</strong><br />
+<em>Thursday, October 25, 11:00 am - 12:40 pm, Room III</em>
+<br />Of particular interest to practitioners working in biomedical application areas, those attending this session will, among other things:</p>
+<ul>
+  <li>Learn about a technique for assessing patient-specific cerebral aneurysm risk applied in during a clinical routine,</li>
+  <li>Improve diagnostic processes with a new multimodal tool for exploring 3D data volumes. 
+<span id="ds" class="anchor"></span></li>
+</ul>
+<hr />
+
+<h2 id="data-science-and-machine-learning">Data Science and Machine Learning</h2>
+<p><a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#legend"><span class="guide">DS</span></a> <strong>VAST Challenge</strong><br />
+<em>Sunday, October 21, 9:00 am - 6:00 pm, Estrel Hall C</em></p>
+<ul>
+  <li><a href="http://www.vacommunity.org/VAST+Challenge+2018">VAST Challenge website</a></li>
+</ul>
+
+<p><a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#legend"><span class="guide">DS</span></a> <strong>Workshop: DSIA: Data Systems for Interactive Analysis</strong><br />
+<em>Sunday, October 21, 2:20 pm - 6:00 pm, Room III</em></p>
+<ul>
+  <li><a href="https://www.interactive-analysis.org/">DSIA website</a></li>
+</ul>
+
+<p><a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#legend"><span class="guide">DS</span></a> <strong>VDS: Visualization in Data Science</strong><br />
+<em>Monday, October 22, 9:00 am - 6:00 pm, Convention Hall 1, Section D</em></p>
+<ul>
+  <li><a href="http://www.visualdatascience.org/2018/index.html">VDS website</a></li>
+</ul>
+
+<p><a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#legend"><span class="guide">DS</span></a> <strong>Workshop: Machine Learning from User Interaction for Visualization and Analytics</strong><br />
+<em>Monday, October 22, 9:00 am - 12:40 pm, Paris Room</em></p>
+<ul>
+  <li><a href="https://learningfromusersworkshop.github.io/">Workshop website</a></li>
+</ul>
+
+<p><a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#legend"><span class="guide">DS</span></a> <strong>Workshop: Visualization for AI Explainability (VISxAI)</strong><br />
+<em>Monday, October 22, 2:20 pm - 6:00 pm, Paris Room</em></p>
+<ul>
+  <li><a href="http://visxai.io/">VISxAI website</a></li>
+</ul>
+
+<p><a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#legend"><span class="guide">DS</span></a> <strong>VAST: Ensemble &amp; Provenance</strong><br />
+<em>Wednesday, October 24, 9:00 am - 10:40 am, Convention Hall 1, Section C</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Learn about the requirements to augment existing client-side web applications with support for capturing, reviewing, sharing, and reusing steps in the reasoning process.</li>
+</ul>
+
+<p><a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#legend"><span class="guide">DS</span></a>  <strong>VAST: Text</strong><br />
+<em>Wednesday, October 24, 9:00 am - 10:40 am, Estrel Hall C</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Gain knowledge on building visual text analytics tools and the opportunities to narrow the gulf between the visualization and text mining fields,</li>
+  <li>Get to know a visualization framework that aids readers in understanding and analyzing the contents of medium-sized text collections.</li>
+</ul>
+
+<p><a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#legend"><span class="guide">DS</span></a> <strong>VAST: High Dimensional Data</strong><br />
+<em>Wednesday, October 24, 02:20 pm - 04:00 pm, Convention Hall 1, Section C</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Get to know an approach that enables vis and non-vis experts to identify and understand clusters, correlations and complex patterns, all by looking at familiar tables,</li>
+  <li>Learn how to compare embedding models from ML and understand what properties are preserved across different embedding techniques.</li>
+</ul>
+
+<p><a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#legend"><span class="guide">DS</span></a> <strong>VAST: Interactive Analytics &amp; Design</strong><br />
+<em>Thursday, October 25 , 9:00 am - 10:40 am, Estrel Hall C</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Get to know an approach that can be used to improve the quality of labeled training data,</li>
+  <li>Get to know a tool for the interactive exploration of logistic regression models</li>
+  <li>Learn about a manipulation interface that allows users to quickly explore and visually analyze the parameters of multidimensional ensemble data sets,</li>
+  <li>Understand how to design better writing support tools via pen and touch interaction and intelligent visual diagramming,</li>
+  <li>Get to know an interactive tool for guided clustering analysis that helps to quickly reason about differences between clusterings.</li>
+</ul>
+
+<p><a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#legend"><span class="guide">DS</span></a> <strong>VAST: Deep Learning</strong><br />
+<em>Thursday, October 25, 11:00 am - 12:40 pm, Convention Hall 1, Section C</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Get an overview over the burgeoning research area of visual analytics for deep learning and open source tools useful for understanding neural networks,</li>
+  <li>Get to know an interactive tool for learning and playing with GANs, one of the popular deep learning models.</li>
+</ul>
+
+<p><a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#legend"><span class="guide">DS</span></a> <strong>VAST: Explainable &amp; VA-Assisted ML</strong><br />
+<em>Thursday, October 25, 04:20 pm - 06:00 pm, Convention Hall 1, Section C</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Learn about a model-agnostic technique that helps users visually interpret the behavior of a classifier. It can be applied in domains such as healthcare, finance, or general data analytics tasks where the interpretation of a model is required,</li>
+  <li>Get to know an approach that can be used in different domains that require to understand and interpret the decisions made by random forests,</li>
+  <li>Get guidance on which VA technique to use for improving their machine learning model.</li>
+</ul>
+
+<p><a target="" alt="Data Science and Machine Learning" title="Data Science and Machine Learning" href="#legend"><span class="guide">DS</span></a> <strong>VAST: Event, Sequence, &amp; ML</strong><br />
+<em>Friday, October 26, 9:00 am - 10:40 am, Convention Hall 1, Section C</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Get to know a technique that can be applied in domains where event sequence data are collected (e.g., analysis of electronic health records and clickstream data),</li>
+  <li>Learn how data analysis novices can be supported when conducting pairwise comparisons by addressing execution and interpretation barriers.
+<span id="ux" class="anchor"></span></li>
+</ul>
+<hr />
+
+<h2 id="user-experience-human-factors-and-interaction-design">User Experience, Human Factors, and Interaction Design</h2>
+<p><a target="" alt="User Experience, Human Factors, and Interaction Design" title="User Experience, Human Factors, and Interaction Design" href="#legend"><span class="guide">UX</span></a> <strong>Tutorial: Introduction to IATK: An Immersive Visual Analytics Toolkit</strong><br />
+<em>Sunday, October 21, 9:00 am - 12:40 pm, Estrel Hall B</em></p>
+<ul>
+  <li><a href="http://ieeevis.org/year/2018/info/tutorials#IATK">Tutorial information</a></li>
+</ul>
+
+<p><a target="" alt="User Experience, Human Factors, and Interaction Design" title="User Experience, Human Factors, and Interaction Design" href="#legend"><span class="guide">UX</span></a> <strong>Workshop: Toward a Design Language for Data Physicalization</strong><br />
+<em>Sunday, October 21, 9:00 am - 12:40 pm, Room III</em></p>
+<ul>
+  <li><a href="http://dataphys.org/workshops/vis18/">Workshop website</a></li>
+</ul>
+
+<p><a target="" alt="User Experience, Human Factors, and Interaction Design" title="User Experience, Human Factors, and Interaction Design" href="#legend"><span class="guide">UX</span></a> <strong>InfoVis: Devices: Large &amp; Small</strong><br />
+<em>Wednesday, October 24, 11:00 am - 12:40 pm , Estrel Hall C</em>
+<br />Of particular interest to user experience / human factors researchers and interaction designers, practitioners attending this session will, among other things</p>
+<ul>
+  <li>Discover a new interactive computing platform for collaborative ubiquitous analytics,</li>
+  <li>Hear about experimental findings that can be applied to the visualization in mobile apps and mobile-first websites for personal health tracking weather reporting, and finance,</li>
+  <li>Appreciate constraints and opportunities with respect to visualizing data for multiple coordinated views across large displays, for multi-touch surface displays, and for smartwatch displays.</li>
+</ul>
+
+<p><a target="" alt="User Experience, Human Factors, and Interaction Design" title="User Experience, Human Factors, and Interaction Design" href="#legend"><span class="guide">UX</span></a> <strong>InfoVis: Immersive Analytics</strong><br />
+<em>Thursday, October 25, 9:00 am - 10:40 am , Convention Hall 1, Section D</em>
+<br />Of particular interest to user experience / human factors researchers and interaction designers, practitioners attending this session will:</p>
+<ul>
+  <li>Get acquainted with a new toolkit for rapidly building immersive visualization experiences in VR and AR,</li>
+  <li>See a new technique for ‘sculpting’ 3D trajectories, such as in air space management,</li>
+  <li>Appreciate the potential for immersive flow maps and their applications in geography, anthropology, and financial analysis</li>
+  <li>Consider the ‘smell of data’, or how ‘information olfactation’ can augment  information recall and increase presence in immersive visualization environments</li>
+  <li>Witness the use of wheeled micro-robots in dynamic data physicalization.</li>
+</ul>
+
+<p><a target="" alt="User Experience, Human Factors, and Interaction Design" title="User Experience, Human Factors, and Interaction Design" href="#legend"><span class="guide">UX</span></a> <strong>InfoVis: Interaction</strong><br />
+<em>Thursday, October 25, 11:00 am - 12:40 pm , Estrel Hall C</em></p>
+
+<p><a target="" alt="User Experience, Human Factors, and Interaction Design" title="User Experience, Human Factors, and Interaction Design" href="#legend"><span class="guide">UX</span></a> <strong>SciVis: Interaction and Multivariate Data</strong><br />
+<em>Thursday, October 25 , 04:20 pm - 06:00 pm, Estrel Hall A+B</em>
+<br /> Practitioners concerned with either multivariate data or interactive visualization will:</p>
+<ul>
+  <li>Get to know a new visualization design, which can be used by non-experts to effectively illuminate 3D scenes such as interactive museum installations,</li>
+  <li>Learn about a framework that enables them to efficiently analyze high-resoluton, multivariate data generated by large-scale scientific simulations,</li>
+  <li>See how a details-first design guideline can support the analysis of computational fluid dynamics data as well as data from a number of other domains.
+<span id="dj" class="anchor"></span></li>
+</ul>
+<hr />
+
+<h2 id="data-journalism-and-news-graphics">Data Journalism and News Graphics</h2>
+<p><a target="" alt="Data Journalism and News Graphics" title="Data Journalism and News Graphics" href="#legend"><span class="guide">DJ</span></a> <strong>Tutorial: Everything Except the Chart 2018</strong><br />
+<em>Sunday, October 21, 9:00 am - 12:40 pm, Room II</em></p>
+<ul>
+  <li><a href="http://ieeevis.org/year/2018/info/tutorials#Everything_except_chart">Tutorial information</a></li>
+</ul>
+
+<p><a target="" alt="Data Journalism and News Graphics" title="Data Journalism and News Graphics" href="#legend"><span class="guide">DJ</span></a> <strong>Tutorial: Storyboards for Science: Combining the Visual and Verbal to Create Engaging Communication</strong><br />
+<em>Monday, October 22, 2:20 pm - 6:00 pm, Room III</em></p>
+<ul>
+  <li><a href="http://ieeevis.org/year/2018/info/tutorials#Storyboards">Tutorial information</a></li>
+</ul>
+
+<p><a target="" alt="Data Journalism and News Graphics" title="Data Journalism and News Graphics" href="#legend"><span class="guide">DJ</span></a> <strong>InfoVis: Design &amp; Storytelling</strong><br />
+<em>Thursday, October 25, 11:00 am - 12:40 pm, Convention Hall 1, Section D</em>
+<br />Of particular interest to data journalists and news graphics designers, practitioners attending this session will, among other things:</p>
+<ul>
+  <li>Get informed about best practices for making communication-oriented visualization more accessible and shareable,</li>
+  <li>See how to incorporate slideshow tutorials as a way to introduce novel visualization designs to non-expert audiences,</li>
+  <li>Learn about a practical workshop approach to jumpstarting visualization design and development projects.
+<span id="ss" class="anchor"></span></li>
+</ul>
+<hr />
+
+<h2 id="simulation-science">Simulation Science</h2>
+<p><a target="" alt="Simulation Science" title="Simulation Science" href="#legend"><span class="guide">SS</span></a> <strong>LDAV: Large Data Analysis and Visualization</strong><br />
+<em>Sunday, October 21, 9:00 am - 6:00 pm, Convention Hall 1, Section D</em></p>
+<ul>
+  <li><a href="http://ldav2018.org/">LDAV website</a></li>
+</ul>
+
+<p><a target="" alt="Simulation Science" title="Simulation Science" href="#legend"><span class="guide">SS</span></a> <strong>Tutorial: Recent Feature Tracking Techniques</strong><br />
+<em>Sunday, October 21, 2:20 pm - 6:00 pm, Room II</em></p>
+<ul>
+  <li><a href="http://ieeevis.org/year/2018/info/tutorials#Feature_tracking">Tutorial information</a></li>
+</ul>
+
+<p><a target="" alt="Simulation Science" title="Simulation Science" href="#legend"><span class="guide">SS</span></a> <strong>Tutorial: Topological Data Analysis Made Easy with the Topology ToolKit (TTK)</strong><br />
+<em>Sunday, October 21, 2:20 pm - 6:00 pm, Paris Room</em></p>
+<ul>
+  <li><a href="http://ieeevis.org/year/2018/info/tutorials#Topology_toolkit">Tutorial information</a></li>
+</ul>
+
+<p><a target="" alt="Simulation Science" title="Simulation Science" href="#legend"><span class="guide">SS</span></a> <strong>BioVis Challenge</strong><br />
+<em>Monday, October 22, 9:00 am - 6:00 pm, Estrel B</em></p>
+<ul>
+  <li><a href="http://biovis.net/2018/ieeevis/">BioVis website</a></li>
+</ul>
+
+<p><a target="" alt="Simulation Science" title="Simulation Science" href="#legend"><span class="guide">SS</span></a> <strong>SciVis: Space and Physics</strong><br />
+<em>Wednesday, October 24, 02:20 pm - 04:00 pm, Estrel Hall A+B</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Get an overview of a diverse set of scientific visualization applications, as diverse as the analysis of porous media, vast astronomical data bases, and weather forecasts and</li>
+  <li>Get to know visualization approaches that help improve weather forecasts.</li>
+</ul>
+
+<p><a target="" alt="Simulation Science" title="Simulation Science" href="#legend"><span class="guide">SS</span></a> <strong>SciVis: SciVis Contest</strong><br />
+<em>Wednesday, October 24, 02:20 pm - 04:00 pm, Estrel Hall C</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Get an in-depth review of how a number of different teams approached a specific visualization challenge: the analysis of a simulated deep-water asteroid impact.</li>
+</ul>
+
+<p><a target="" alt="Simulation Science" title="Simulation Science" href="#legend"><span class="guide">SS</span></a> <strong>Scalable Techniques</strong><br />
+<em>Thursday, October 25, 11:00 pm - 12:40 pm, Estrel Hall A+B</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Get to know approaches for the visualization of non-cartesian mesh data,</li>
+  <li>Learn about ray casting approaches for unstructured and AMR grids.</li>
+</ul>
+
+<p><a target="" alt="Simulation Science" title="Simulation Science" href="#legend"><span class="guide">SS</span></a>  <strong>CG&amp;A: Session 2</strong><br />
+<em>Thursday, October 25, 11:00 am - 12:40 pm, Room IV</em>
+<br />Of particular interest to practitioners working in biomedical application areas, those attending this session will, among other things:</p>
+<ul>
+  <li>Learn about a technique for assessing patient-specific cerebral aneurysm risk applied in during a clinical routine,</li>
+  <li>Improve diagnostic processes with a new multimodal tool for exploring 3D data volumes.</li>
+  <li>See a diverse set of visualization solutions for specific analysis prolems,</li>
+  <li>Learn how visualization helps teaching college courses, explore and explain outer space, and improve clinical diagonstics.</li>
+</ul>
+
+<p><a target="" alt="Simulation Science" title="Simulation Science" href="#legend"><span class="guide">SS</span></a> <strong>SciVis: Time-Varying Data</strong><br />
+<em>Friday, October 26, 09:00 pm - 10:40 pm, Estrel C</em>
+<br />Among other things, practitioners attending this session will:</p>
+<ul>
+  <li>Learn how to analyse time-dependent flow fields, e.g., by finding relationships between physical attributes or by focusing on time-invariant properties,</li>
+  <li>Get to know a new plotting mechanism which is designed to plot data with three dimensions, e.g., space, attribute and time with applications in various domains.</li>
+</ul>
+
+<!-- </div> -->
+
+<hr />
+
+    </article>
+  </main>
+
+  <footer>
+    <aside>
+      Last update: Dec  7, 2018
+    </aside>
+    <article>
+       <span style="float: left; ">
+	   © 2018 VisInPractice, part of IEEE VIS 2018, Berlin, Germany, October 22, 2018. 
+	   </span>
+	   <span style="float: right;">
+	   <a href="disclaimer.html">Disclaimer</a>
+	   </span>
+    </article>
+  </footer>
+
+</body>
+
+</html>

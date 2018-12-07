@@ -1,18 +1,10 @@
 # Important dates
 
 IEEE VIS Early Registration
-: September 7, 2018
+: September 2019
 
 VisInPractice at IEEE VIS
-: October 22, 2018
-
-## Mini-Symposium Talk Submissions
-
-Talk Submission
-: June 30, 2018
-
-Speaker Notification
-: July 31, 2018
+: October 20 or 21, 2019
 
 <!-- ## Workshop
 

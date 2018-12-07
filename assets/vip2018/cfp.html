@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang=" en ">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>VisInPractice – Mini-Symposium on Visualizing Uncertainty CFP</title>
+  <meta name="description" content="The VisInPractice program at IEEE VIS is an opportunity for visualization practitioners and researchers to meet and share experiences, insights, and ideas in...">
+
+  <link rel="stylesheet" href="assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/cfp.html">
+</head>
+
+
+<body>
+
+  <header>
+    <aside>
+      <img id="vip-logo" src="assets/logo-vip.png" />
+    </aside>
+    <article>
+      <svg id='header_svg'></svg>
+      <script src="https://d3js.org/d3.v4.min.js"></script>     
+      <script>
+
+        var svg_width = +d3.select('article').style('width').substring(0, 3);
+        // +d3.select('aside').style('width').substring(0, 3) == +d3.select('article').style('width').substring(0, 3) ? window.innerWidth - 70 : window.innerWidth - 290;
+        var numcols = svg_width >= 1080 ? 40 : svg_width >= 720 ? 30 : svg_width >= 320 ? 20 :15;
+
+        window.addEventListener('load', function() { 
+          svg_width = +d3.select('article').style('width').substring(0, 3);
+          // var svg_width = +d3.select('aside').style('width').substring(0, 3) == +d3.select('article').style('width').substring(0, 3) ? window.innerWidth - 70 : window.innerWidth - 290;
+          numcols = svg_width >= 1080 ? 40 : svg_width >= 720 ? 30 : svg_width >= 320 ? 20 :15;
+          d3.select("#header_svg")
+          .attr('width',svg_width)
+          .attr('height', (svg_width / numcols) * 4);
+        }); 
+
+        var color_scale = d3.scaleLinear()
+        .domain([0,8,16])
+        .range([d3.lab("#999999"),d3.lab("#ffffbf"),d3.lab("#fc8d59")])
+        .interpolate(d3.interpolateLab);
+
+        var grid = [],
+            text = [["V","I","S"],["I","N"],["P","R","A","C","T","I","C","E"],["2","0","1","8"]],
+            i,
+            j;
+        for (i = 0; i < 4; i++) {
+          for (j = 0; j < numcols; j++) {
+            var grid_item = {
+              "row":i,
+              "column":j,
+              "fill_value": color_scale( Math.floor(Math.random()*16) ),
+              "char": j >= text[i].length ? "" : text[i][j]
+            };
+            grid.push(grid_item);
+          }
+        }
+
+        var grid_item = d3.select("#header_svg")
+            .selectAll(".grid_item")          
+            .data(grid);
+
+        var grid_item_exit = grid_item.exit()
+        .remove();
+
+        var grid_item_enter = grid_item.enter()
+        .append("g")
+        .attr("class","grid_item")
+        .attr("id", function (d) {
+          return "grid_item_" + d.row + "_" + d.column;
+        })
+        .merge(grid_item);
+
+        grid_item_enter.append('rect')
+        .style('stroke','transparent')
+        .style('stroke-width','1px')
+        .attr('width', d3.max([0,svg_width / numcols - 2]))
+        .attr('height', d3.max([0,svg_width / numcols - 2]))
+        .style('fill', function(d){          
+          return d.char != "" ? '#ffffbf' : color_scale( Math.floor(Math.random()*16) );
+        })
+        .attr('x', function(d){
+          return (svg_width / numcols) * d.column;
+        })
+        .attr('y', function(d){
+          return (svg_width / numcols) * d.row;
+        });
+
+        grid_item_enter.append('text')  
+        .attr('text-anchor', "middle")
+        .attr('alignment-baseline','middle')  
+        .attr('dy','0.15em')
+        .attr('x', function(d){
+          return (svg_width / numcols) * d.column + (svg_width / numcols) * 0.5;
+        })
+        .attr('y', function(d){
+          return (svg_width / numcols) * d.row + (svg_width / numcols) * 0.5;
+        })
+        .style('font-size', (d3.max([1,svg_width / numcols - 2]) - 1) + 'px')
+        .text(function(d){
+          return d.char;
+        });
+
+        function update () {
+
+          grid = [];
+          text = [["V","I","S"],["I","N"],["P","R","A","C","T","I","C","E"],["2","0","1","8"]];
+          for (i = 0; i < 4; i++) {
+            for (j = 0; j < numcols; j++) {
+              var grid_item = {
+                "row":i,
+                "column":j,
+                "fill_value": color_scale( Math.floor(Math.random()*16) ),
+                "char": j >= text[i].length ? "" : text[i][j]
+              };
+              grid.push(grid_item);
+            }
+          }
+
+          d3.select("#header_svg")
+          .attr('width',svg_width)
+          .attr('height', (svg_width / numcols) * 4);
+
+          var grid_item_update = d3.selectAll(".grid_item")
+          .transition()          
+          .duration(3000)
+          .ease(d3.easeCubicInOut);
+          
+          grid_item_update.select('rect')          
+          .attr('width', d3.max([0,svg_width / numcols - 2]))
+          .attr('height', d3.max([0,svg_width / numcols - 2]))
+          .style('fill', function(d){
+            return d.char != "" ? '#ffffbf' : color_scale( Math.floor(Math.random()*16) );
+          })
+          .attr('x', function(d){
+            return (svg_width / numcols) * d.column;
+          })
+          .attr('y', function(d){
+            return (svg_width / numcols) * d.row;
+          });  
+
+          grid_item_update.select('text')  
+          .attr('text-anchor', "middle")
+          .attr('alignment-baseline','middle')  
+          .attr('dy','0.15em')
+          .attr('x', function(d){
+            return (svg_width / numcols) * d.column + (svg_width / numcols) * 0.5;
+          })
+          .attr('y', function(d){
+            return (svg_width / numcols) * d.row + (svg_width / numcols) * 0.5;
+          })
+          .style('font-size', (d3.max([1,svg_width / numcols - 2]) - 1) + 'px')
+          .text(function(d){
+            return d.char;
+          });
+        }
+
+        window.onresize = function(e) {
+
+          svg_width = +d3.select('article').style('width').substring(0, 3);
+          // svg_width = +d3.select('aside').style('width').substring(0, 3) == +d3.select('article').style('width').substring(0, 3) ? window.innerWidth - 70 : window.innerWidth - 290;
+          numcols = svg_width >= 1080 ? 40 : svg_width >= 720 ? 30 : svg_width >= 320 ? 20 :15;
+          update();
+        };   
+
+        d3.interval(function() {
+          update();
+        }, 4000);
+
+      </script>
+    </article>
+  </header>
+
+  <main>
+    <aside>
+      <nav>
+  <h1>Menu</h1>
+  <ul>
+     
+     
+    
+    <li class="">
+      <a href="index.html">Home</a>
+    </li>
+     
+     
+    
+    <li class="">
+      <a href="guide.html">VIS Practitioner Guide</a>
+    </li>
+     
+     
+    
+    <li class="">
+      <a href="organization.html">Organization</a>
+    </li>
+     
+     
+    
+    <li class="">
+      <a href="program.html">Program</a>
+    </li>
+     
+     
+    
+    <li class="">
+      <a href="graphic_record.html">Graphic Recording</a>
+    </li>
+     
+     
+    
+    <li class="current">
+      <a href="cfp.html">Call for Participation</a>
+    </li>
+    
+    <li>
+      <a href="http://twitter.com/visinpractice">@visinpractice</a>
+    </li>
+    <li>
+      <a href="mailto:vip@ieeevis.org">Contact</a>
+    </li>
+  </ul>
+  <h1>Archive</h1>
+  <ul>
+     
+     
+    
+    <li class="">
+      <a href="assets/vip2017/index.html">VisInPractice 2017</a>
+    </li>
+    
+  </ul>
+  
+</nav>
+      <hr />
+      
+      <h1 id="important-dates">Important dates</h1>
+
+<dl>
+  <dt>IEEE VIS Early Registration</dt>
+  <dd>September 7, 2018</dd>
+  <dt>VisInPractice at IEEE VIS</dt>
+  <dd>October 22, 2018</dd>
+</dl>
+
+<h2 id="mini-symposium-talk-submissions">Mini-Symposium Talk Submissions</h2>
+
+<dl>
+  <dt>Talk Submission</dt>
+  <dd>June 30, 2018</dd>
+  <dt>Speaker Notification</dt>
+  <dd>July 31, 2018</dd>
+</dl>
+
+<!-- ## Workshop
+
+Half-day workshop
+: October 2, 2017
+
+## Panel
+
+Increasing the Impact of Visualization Research
+: October 3, 2017
+
+## Posters
+
+VIS main poster session
+: October 4, 2017 -->
+
+    </aside>
+    <article>
+      <p>The VisInPractice program at <a href="http://ieeevis.org">IEEE VIS</a> is an opportunity for visualization practitioners and researchers to meet and share experiences, insights, and ideas in applying visualization and visual analytics to real-world use cases. VisInPractice seeks to acknowledge successful transfers of visualization research into applications as well as current visualization practices occurring in industry. Our primary goal is to supplement the successful program of IEEE VIS with content that is relevant to visualization practitioners.</p>
+
+<h2 id="visinpractice-mini-symposium-on-visualizing-uncertainty">VisInPractice Mini-Symposium on Visualizing Uncertainty</h2>
+
+<p>The <a href="program.html">VisInPractice 2018 Program</a> will include a fast-paced, single-session mini-symposium on the practical aspects of uncertainty visualization. Prefaced with a primer talk by <a href="https://www.nrel.gov/research/kristi-potter.html">Kristi Potter</a> from the National Renewable Energy Laboratory, the event will also include six 10-minute lightning talks.</p>
+
+<h4 id="submission-details">Submission Details</h4>
+
+<p>We now encourage submissions for these lightning talks via the <a href="https://new.precisionconference.com/submissions">Precision Conference submission system</a>. We ask for a concise 250-word abstract, a 150-word paragraph on what a practitioner can expect to learn from the talk, and one descriptive image figure.</p>
+
+<p>Rather than focusing on the academic sophistication of your solution, you must clearly present the practical relevance of your approach. Successful submissions will communicate the general impact of their approach beyond the their specialized application area.</p>
+
+<p>Your <strong>250-word abstract</strong> should answer the following questions:</p>
+<ul>
+  <li><em>What form does your data take and how does uncertainty manifest in it?</em></li>
+  <li><em>What task are you addressing?</em></li>
+  <li><em>How does your visualization solution address uncertainty in the data?</em></li>
+  <li><em>What were the results of applying your solution?</em></li>
+</ul>
+
+<!-- - How did it affect your results?
+- How did your approach affect the previously used analysis process and its outcome?
+- What did your users have to say?
+- What would you do differently and what would you carry over the next time you face a similar situation? -->
+
+<p>We also ask for a <strong>150-word statement</strong> that indicates <strong>what a practitioner can expect to learn from the talk</strong>, answering the following questions with regards to visualizing uncertainty:</p>
+<ul>
+  <li><em>What new insight will the audience gain?</em></li>
+  <li><em>What new ability can they apply in their own practice?</em></li>
+</ul>
+
+<p>Based on this input, the VisInPractice Chairs will select the topics that make up the session. We are looking forward to your submissions and to a lively discussion at VisInPractice 2018.</p>
+
+<h4 id="important-dates">Important Dates</h4>
+
+<ul>
+  <li>
+    <p><strong>June 30, 2018</strong>: Talk submission via <a href="https://new.precisionconference.com/submissions">Precision Conference</a></p>
+  </li>
+  <li>
+    <p><strong>July 31, 2018</strong>: Notification</p>
+  </li>
+  <li>
+    <p><strong>August 14, 2018</strong>: Final talk submission</p>
+  </li>
+  <li>
+    <p><strong>September 7, 2018</strong>: <a href="http://ieeevis.org">IEEE VIS</a> early registration deadline</p>
+  </li>
+  <li>
+    <p><strong>October 22, 2018</strong>: VisInPractice 2018 at <a href="http://ieeevis.org">IEEE VIS</a> in Berlin</p>
+  </li>
+</ul>
+
+    </article>
+  </main>
+
+  <footer>
+    <aside>
+      Last update: Dec  7, 2018
+    </aside>
+    <article>
+       <span style="float: left; ">
+	   © 2018 VisInPractice, part of IEEE VIS 2018, Berlin, Germany, October 22, 2018. 
+	   </span>
+	   <span style="float: right;">
+	   <a href="disclaimer.html">Disclaimer</a>
+	   </span>
+    </article>
+  </footer>
+
+</body>
+
+</html>
