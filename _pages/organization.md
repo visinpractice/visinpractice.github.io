@@ -15,6 +15,9 @@ title: Organization
 * **[Matthew Brehmer](https://mattbrehmer.github.io)**, Microsoft Research (InfoVis)
 * **Matthew Larsen**, Lawrence Livermore National Laboratory (SciVis)
 
+Sketches in banner by graphical recording artist [Benjamin Felis](https://benjaminfelis.com/).
+
+
 <!-- <img src="../assets/organizers.png" width="100%" title="Matthew Brehmer, Bernd Hentschel, Daniela Oelke"  alt="Matthew Brehmer, Bernd Hentschel, Daniela Oelke"/> -->
 
 <!-- </div> -->
