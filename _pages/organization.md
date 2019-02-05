@@ -11,9 +11,9 @@ title: Organization
 
 **Email**: [vip@ieeevis.org](mailto:vip@ieeevis.org)
 
-* **Daniela Oelke**, Siemens AG (VAST)
-* **[Matthew Brehmer](https://mattbrehmer.github.io)**, Microsoft Research (InfoVis)
-* **Matthew Larsen**, Lawrence Livermore National Laboratory (SciVis)
+* **Daniela Oelke**, Siemens AG
+* **Matthew Brehmer**, Microsoft Research
+* **Matthew Larsen**, Lawrence Livermore National Laboratory
 
 Sketches in banner by graphical recording artist [Benjamin Felis](https://benjaminfelis.com/).
 
