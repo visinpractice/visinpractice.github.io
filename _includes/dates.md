@@ -4,7 +4,7 @@ IEEE VIS Early Registration
 : September 2019
 
 VisInPractice at IEEE VIS
-: October 20 or 21, 2019
+: October 21, 2019
 
 <!-- ## Workshop
 

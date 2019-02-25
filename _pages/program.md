@@ -5,7 +5,7 @@ title: Program
 
 {::options parse_block_html="true" /}
 
-# Program: Sunday, October 20  or Monday, October 21, 2019
+# Program: Monday, October 21, 2019 at the Vancouver Convention Centre
 
 The entire VisInPractice program is dedicated to everyone interested in the **practical aspects of data visualization and visual analytics**. The focus will be on how to solve real use cases rather than discussing them from an academic perspective. The program targets both newcomers to visualization and visual analysis as well as returning members of the community seeking to learn about new tools and practices.
 
