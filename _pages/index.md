@@ -7,7 +7,7 @@ title: Home
 ---
 {::options parse_block_html="true" /}
 
-The **VisInPractice event** at **[IEEE VIS 2019](http://ieeevis.org)** will feature invited talks by visualization practitioners on **Monday, October 21nd, 2019** in **Vancouver, BC, Canada** at the Vancouver Convention Centre. 
+The **VisInPractice event** at **[IEEE VIS 2019](http://ieeevis.org)** will feature invited talks by visualization practitioners on **Monday, October 21st, 2019** in **Vancouver, BC, Canada** at the Vancouver Convention Centre. 
 
 In the meantime, check out what happened at [VisInPractice 2018 in Berlin](assets/vip2018/index.html).
 
