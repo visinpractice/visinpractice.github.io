@@ -5,7 +5,7 @@ title: Disclaimer
 
 # Impressum
 
-IEEE VisInPractice Co-Chairs 2019:
-* Matthew Brehmer (Microsoft Research)
+VisInPractice 2019 organizing committee:
+* Matthew Brehmer
 * Matt Larsen (Lawrence Livermore National Laboratory)
 * Daniela Oelke (Siemens Research)
