@@ -49,8 +49,8 @@ navigation:
 #    url: program.html
 #  - title: Graphic Recording
 #    url: graphic_record.html
- - title: Suggest Speakers
-   url: cfp.html
+#  - title: Suggest Speakers
+#    url: cfp.html
 
 archive:
 - title: VisInPractice 2017
