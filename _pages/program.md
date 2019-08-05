@@ -9,23 +9,26 @@ title: Program
 
 The entire VisInPractice program is dedicated to everyone interested in the **practical aspects of data visualization and visual analytics**. The focus will be on how to solve real use cases rather than discussing them from an academic perspective. The program targets both newcomers to visualization and visual analysis as well as returning members of the community seeking to learn about new tools and practices.
 
-**Click on a speaker to see their talk title, DESCRIPTION, and bio**:
 <div class="imagemap">
-<img src="/assets/speakers.png" width="100%" title="VisInPractice 2019 talk series speakers"  alt="VisInPractice 2019 talk series speakers">
-<a target="" alt="VisInPractice 2019 Program" title="VisInPractice 2019 Program" href="program.html" style="top: 0%; left: 0%; width: 25%; height: 33%;">
+<img src="/assets/speakers-temp.png" width="100%" title="VisInPractice 2019 talk series speakers"  alt="VisInPractice 2019 talk series speakers">
+<a target="" alt="VisInPractice 2019 Program" title="VisInPractice 2019 Program" href="" style="top: 0%; left: 0%; width: 25%; height: 33%;">
 <a target="" alt="RJ Andrews" title="RJ Andrews" href="#andrews" style="top: 0%; left: 25%; width: 25%; height: 33%;">
-<a target="" alt="Eugene Chen+ Joey Cherdarchuk" title="Eugene Chen+ Joey Cherdarchuk" href="#chen" style="top: 0%; left: 50%; width: 25%; height: 33%;">
+<a target="" alt="Eugene Chen + Joey Cherdarchuk" title="Eugene Chen + Joey Cherdarchuk" href="#chen" style="top: 0%; left: 50%; width: 25%; height: 33%;">
 <a target="" alt="John Clyne" title="John Clyne" href="#clyne" style="top: 0%; left: 75%; width: 25%; height: 33%;">
 <a target="" alt="David Feng" title="v" href="#feng" style="top: 33%; left: 0%; width: 25%; height: 33%;">
 <a target="" alt="Frank Hangler" title="Frank Hangler" href="#hangler" style="top: 33%; left: 25%; width: 25%; height: 33%;">
 <a target="" alt="Callie Neylan" title="Callie Neylan" href="#neylan" style="top: 33%; left: 50%; width: 25%; height: 33%;">
-<a target="" alt="Mollie Pettit" title="Mollie Pettit" href="#pettit" style="top: 33%; left: 75%; width: 25%; height: 33%;">
-<a target="" alt="Chad Skelton" title="Chad Skelton" href="#skelton" style="top: 67%; left: 0%; width: 25%; height: 33%;">
-<a target="" alt="Amber Thomas" title="Amber Thomas" href="#thomas" style="top: 67%; left: 25%; width: 25%; height: 33%;">
-<a target="" alt="Meghana Venkataswamy + Johanna Fulda" title="Meghana Venkataswamy + Johanna Fulda" href="#venkataswamy" style="top: 67%; left: 50%; width: 25%; height: 33%;">
-<a target="" alt="Timothy Wojtaszek" title="Timothy Wojtaszek" href="#wojtaszek" style="top: 67%; left: 75%; width: 25%; height: 33%;">
+<!-- <a target="" alt="Mollie Pettit" title="Mollie Pettit" href="#pettit" style="top: 33%; left: 75%; width: 25%; height: 33%;"> -->
+<a target="" alt="Chad Skelton" title="Chad Skelton" href="#skelton" style="top: 33%; left: 75%; width: 25%; height: 33%;">
+<!-- <a target="" alt="Chad Skelton" title="Chad Skelton" href="#skelton" style="top: 67%; left: 0%; width: 25%; height: 33%;"> -->
+<!-- <a target="" alt="Amber Thomas" title="Amber Thomas" href="#thomas" style="top: 67%; left: 25%; width: 25%; height: 33%;"> -->
+<a target="" alt="Meghana Venkataswamy + Johanna Fulda" title="Meghana Venkataswamy + Johanna Fulda" href="#venkataswamy" style="top: 67%; left: 0%; width: 25%; height: 33%;">
+<a target="" alt="Timothy Wojtaszek" title="Timothy Wojtaszek" href="#wojtaszek" style="top: 67%; left: 25%; width: 25%; height: 33%;">
+<!-- <a target="" alt="Meghana Venkataswamy + Johanna Fulda" title="Meghana Venkataswamy + Johanna Fulda" href="#venkataswamy" style="top: 67%; left: 50%; width: 25%; height: 33%;">
+<a target="" alt="Timothy Wojtaszek" title="Timothy Wojtaszek" href="#wojtaszek" style="top: 67%; left: 75%; width: 25%; height: 33%;"> -->
 
 </div>
+
 
 # At-a-Glance Schedule
 
@@ -101,14 +104,6 @@ Joey is a cofounder and the design lead at Darkhorse Analytics. A data visualiza
 
 **SPEAKER BIO**: Callie is a designer, photographer, and writer. She has worked at various startups, software companies, and design firms in Seattle and, while on the East Coast, as a senior interaction designer at NPR. She is now a senior software designer at Microsoft, where she works on the Excel product team, creating data visualization and visual analytics tools.
 
-<span id="pettit" class="anchor"></span>
-<img src="assets/pettit.png" width="100%" title="Mollie Pettit: An Introduction to the Data Visualization Society"  alt="Mollie Pettit: An Introduction to the Data Visualization Society"/>
-**SPEAKER**: Mollie Pettit, [Data Visualization Society](https://datavisualizationsociety.com) | [@mollzmp](http://twitter.com/mollzmp)
-
-**DESCRIPTION**: The Data Visualization Society aims to collect and establish best practices, fostering a community that supports members as they grow and develop data visualization skills. As data grows more central to our personal and professional lives, the practice of data visualization becomes ever more important.
-
-**SPEAKER BIO**: Mollie tells stories through the creation of interactive data visualizations. Her data data science background is wielded to find interesting and not-so-obvious insights within the data, prepare the data, and be thoughtful about the visual representation of statistical nuances within the data. She is also passionate about teaching data visualization and d3.js via workshops and corporate trainings.
-
 <span id="skelton" class="anchor"></span>
 <img src="assets/skelton.png" width="100%" title="Chad Skelton: An Introduction to the Data Visualization Society"  alt="Chad Skelton: An Introduction to the Data Visualization Society"/>
 **SPEAKER**: [Chad Skelton](http://www.chadskelton.com/), Kwantlen Polytechnic University | [@chadskelton](http://twitter.com/chadskelton)
@@ -116,14 +111,6 @@ Joey is a cofounder and the design lead at Darkhorse Analytics. A data visualiza
 **DESCRIPTION**: For the past four years, I’ve been teaching an undergrad “Data Visualization” course made up almost entirely of students who don’t want to be there. It’s a mix of journalism students forced to take my course to get their degree and humanities students who need to take some type of “quantitative course” and think Data Visualization sounds easier than something like Applied Statistics. On the first day of class, I ask students to raise their hand if they hated math in high school. This past semester, all but one student raised their hand. It's a tough crowd. Yet by the end of the semester, most of my students are excited about data visualization and eager to find ways to apply their new data skills to their other courses and in the workforce when they graduate. In this talk, I’ll share my advice for how to turn data-visualization skeptics into data-visualization enthusiasts. While most relevant to fellow teachers, this talk should also be useful for anyone who has difficulty getting their colleagues as excited about data visualization as they are.
 
 **SPEAKER BIO**: Chad Skelton is an award-winning data journalist, consultant, and trainer based in Vancouver. Chad worked as a data journalist at The Vancouver Sun until 2015. In 2014, Chad won an international Data Journalism Award for his portfolio of work in the previous year. He has received the Jack Webster Award, British Columbia's top journalism prize, six times. Chad created The Sun's public-sector salary database, which has received more than 20 million pageviews, and has built popular interactive tools on everything from commuting patterns to income inequality. He also made a Twitter robot that checks court judgments (@BCCourtBot). Chad has been an instructor at Kwantlen Polytechnic University since 2005, where he teaches the popular Citizen Journalism (JRNL 1220) and Data Visualization (JRNL 3165) courses. Chad also teaches a course in Data Storytelling and Visualization at the University of Florida as part of its online Master's program in Audience Analytics. Chad has given several talks on data and storytelling, including at the 2015 Tapestry Conference sponsored by Tableau Software and at Simon Fraser University's Dream Colloquium on Engaging Big Data. Chad has a Bachelor of Applied Arts in Journalism from Ryerson University and a Master of Information Management from Dalhousie University.
-
-<span id="thomas" class="anchor"></span>
-<img src="assets/thomas.png" width="100%" title="Amber Thomas: Things We've Learned from Telling the 'Fun' Data Stories"  alt="Amber Thomas: Things We've Learned from Telling the 'Fun' Data Stories"/>
-**SPEAKER**: Amber Thomas, *[The Pudding](https://pudding.cool/)* | [@ProQuesAsker](http://twitter.com/ProQuesAsker)
-
-**DESCRIPTION**: When we talk about topics that are debated in culture, you may immediately think of heated, divisive topics publicly debated during political campaigns. Or perhaps you're thinking more of a low-key dispute between friends over beer. At *[The Pudding](https://pudding.cool/)*, an online editorial for visually-led stories, we focus on adding data to both types of debate. The topics and even "serious-ness" of stories we choose to write about vary widely, and we are often asked why we continue to write about "fun" topics with so many more pressing matters at hand. In this talk, I will discuss how we tell stories, the things we've learned from telling "fun" stories, and why we think the internet is better with both.
-
-**SPEAKER BIO**: Amber is a marine biologist and science communicator by training, but she's taking all of the data analysis, statistics, and mathematical modeling skills she's learned and is now applying them to new problems. She's a full-time “Journalist-Engineer” at [Polygraph](http://polygraph.cool) and *[The Pudding](https://pudding.cool/)*.
 
 <span id="venkataswamy" class="anchor"></span>
 <img src="assets/venkataswamy.png" width="100%" title="Meghana Venkataswamy + Johanna Fulda: Visualizing Opportunity"  alt="Meghana Venkataswamy + Johanna Fulda: Visualizing Opportunity"/>
