@@ -5,7 +5,7 @@ baseurl: ""
 url: "https://visinpractice.github.io"
 
 description: > 
-  VisinPractice at IEEE VIS 2019, Vancouver, Canada, October 20 or October 21, 2018
+  VisinPractice at IEEE VIS 2019, Vancouver, Canada, October October 21, 2019
 
 
 # Build settings
@@ -46,7 +46,7 @@ navigation:
  - title: Organization
    url: organization.html
 #  - title: Program
-#    url: program.html
+  #  url: program.html
 #  - title: Graphic Recording
 #    url: graphic_record.html
 #  - title: Suggest Speakers
