@@ -18,7 +18,7 @@ To attend VisInPractice 2019, you must [register for the IEEE VIS Conference](ht
 <a target="" alt="RJ Andrews" title="RJ Andrews" href="#andrews" style="top: 0%; left: 25%; width: 25%; height: 33%;">
 <a target="" alt="Eugene Chen + Joey Cherdarchuk" title="Eugene Chen + Joey Cherdarchuk" href="#chen" style="top: 0%; left: 50%; width: 25%; height: 33%;">
 <a target="" alt="John Clyne" title="John Clyne" href="#clyne" style="top: 0%; left: 75%; width: 25%; height: 33%;">
-<a target="" alt="David Feng" title="v" href="#feng" style="top: 33%; left: 0%; width: 25%; height: 33%;">
+<a target="" alt="David Feng" title="David Feng" href="#feng" style="top: 33%; left: 0%; width: 25%; height: 33%;">
 <a target="" alt="Frank Hangler" title="Frank Hangler" href="#hangler" style="top: 33%; left: 25%; width: 25%; height: 33%;">
 <a target="" alt="Callie Neylan" title="Callie Neylan" href="#neylan" style="top: 33%; left: 50%; width: 25%; height: 33%;">
 <!-- <a target="" alt="Mollie Pettit" title="Mollie Pettit" href="#pettit" style="top: 33%; left: 75%; width: 25%; height: 33%;"> -->
