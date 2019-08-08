@@ -43,10 +43,10 @@ navigation:
 #    url: important-dates.html
 #  - title: VIS Practitioner Guide
 #    url: guide.html
+ - title: Program
+   url: program.html
  - title: Organization
    url: organization.html
-#  - title: Program
-  #  url: program.html
 #  - title: Graphic Recording
 #    url: graphic_record.html
 #  - title: Suggest Speakers
