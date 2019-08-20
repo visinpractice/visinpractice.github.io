@@ -13,22 +13,19 @@ To attend VisInPractice 2019, you must [register for the IEEE VIS Conference](ht
 
 **Click on a speaker to see their talk title, DESCRIPTION, and bio**:
 <div class="imagemap">
-<img src="/assets/speakers-temp.png" width="100%" title="VisInPractice 2019 talk series speakers"  alt="VisInPractice 2019 talk series speakers">
-<a target="" alt="VisInPractice 2019 Program" title="VisInPractice 2019 Program" href="" style="top: 0%; left: 0%; width: 25%; height: 33%;">
+<img src="/assets/speakers.png" width="100%" title="VisInPractice 2019 talk series speakers"  alt="VisInPractice 2019 talk series speakers">
+<a target="" alt="VisInPractice 2019 Program" title="VisInPractice 2019 Program" href="program.html" style="top: 0%; left: 0%; width: 25%; height: 33%;">
 <a target="" alt="RJ Andrews" title="RJ Andrews" href="#andrews" style="top: 0%; left: 25%; width: 25%; height: 33%;">
-<a target="" alt="Eugene Chen + Joey Cherdarchuk" title="Eugene Chen + Joey Cherdarchuk" href="#chen" style="top: 0%; left: 50%; width: 25%; height: 33%;">
+<a target="" alt="Eugene Chen+ Joey Cherdarchuk" title="Eugene Chen+ Joey Cherdarchuk" href="#chen" style="top: 0%; left: 50%; width: 25%; height: 33%;">
 <a target="" alt="John Clyne" title="John Clyne" href="#clyne" style="top: 0%; left: 75%; width: 25%; height: 33%;">
 <a target="" alt="David Feng" title="David Feng" href="#feng" style="top: 33%; left: 0%; width: 25%; height: 33%;">
 <a target="" alt="Frank Hangler" title="Frank Hangler" href="#hangler" style="top: 33%; left: 25%; width: 25%; height: 33%;">
 <a target="" alt="Callie Neylan" title="Callie Neylan" href="#neylan" style="top: 33%; left: 50%; width: 25%; height: 33%;">
-<!-- <a target="" alt="Mollie Pettit" title="Mollie Pettit" href="#pettit" style="top: 33%; left: 75%; width: 25%; height: 33%;"> -->
-<a target="" alt="Chad Skelton" title="Chad Skelton" href="#skelton" style="top: 33%; left: 75%; width: 25%; height: 33%;">
-<!-- <a target="" alt="Chad Skelton" title="Chad Skelton" href="#skelton" style="top: 67%; left: 0%; width: 25%; height: 33%;"> -->
-<a target="" alt="Amber Thomas" title="Amber Thomas" href="#thomas" style="top: 67%; left: 0%; width: 25%; height: 33%;">
-<a target="" alt="Meghana Venkataswamy + Johanna Fulda" title="Meghana Venkataswamy + Johanna Fulda" href="#venkataswamy" style="top: 67%; left: 25%; width: 25%; height: 33%;">
-<a target="" alt="Timothy Wojtaszek" title="Timothy Wojtaszek" href="#wojtaszek" style="top: 67%; left: 50%; width: 25%; height: 33%;">
-<!-- <a target="" alt="Meghana Venkataswamy + Johanna Fulda" title="Meghana Venkataswamy + Johanna Fulda" href="#venkataswamy" style="top: 67%; left: 50%; width: 25%; height: 33%;">
-<a target="" alt="Timothy Wojtaszek" title="Timothy Wojtaszek" href="#wojtaszek" style="top: 67%; left: 75%; width: 25%; height: 33%;"> -->
+<a target="" alt="Mollie Pettit" title="Mollie Pettit" href="#pettit" style="top: 33%; left: 75%; width: 25%; height: 33%;">
+<a target="" alt="Chad Skelton" title="Chad Skelton" href="#skelton" style="top: 67%; left: 0%; width: 25%; height: 33%;">
+<a target="" alt="Amber Thomas" title="Amber Thomas" href="#thomas" style="top: 67%; left: 25%; width: 25%; height: 33%;">
+<a target="" alt="Meghana Venkataswamy + Johanna Fulda" title="Meghana Venkataswamy + Johanna Fulda" href="#venkataswamy" style="top: 67%; left: 50%; width: 25%; height: 33%;">
+<a target="" alt="Timothy Wojtaszek" title="Timothy Wojtaszek" href="#wojtaszek" style="top: 67%; left: 75%; width: 25%; height: 33%;">
 
 </div>
 
@@ -107,6 +104,14 @@ Joey is a cofounder and the design lead at Darkhorse Analytics. A data visualiza
 
 **SPEAKER BIO**: Callie is a designer, photographer, and writer. She has worked at various startups, software companies, and design firms in Seattle and, while on the East Coast, as a senior interaction designer at NPR. She is now a senior software designer at Microsoft, where she works on the Excel product team, creating data visualization and visual analytics tools.
 
+<span id="pettit" class="anchor"></span>
+<img src="assets/pettit.png" width="100%" title="Mollie Pettit: Introducing the Data Visualization Society"  alt="Mollie Pettit: An Introducing the Data Visualization Society"/>
+**SPEAKER**: [Mollie Pettit](http://guacamollie.com/) ([@mollzmp](http://twitter.com/mollzmp)), Netflix
+
+**DESCRIPTION**: [The Data Visualization Society](https://www.datavisualizationsociety.com/) less than a year ago, and yet so much has happened. Mollie will discuss what spurred the decision to create the society, what's been accomplished so far, and some of the difficulties along the way. She will also discuss the annual data visualization survey results and what insights it reveals about the data visualization profession.
+
+**SPEAKER BIO**: Mollie is a Senior Data Visualization Engineer with Netflix. Previously, Mollie worked as a data visualization contractor, a d3.js instructor with Northwestern University and Metis, and as a data scientist with Datascope Analytics. Mollie's joy at being involved with data viz community endeavors has led her to found and organize [Chicago Data Viz Community Meetup](https://www.meetup.com/Chicago-Data-Viz-Community/); volunteer as [VisFest](http://visfest.com/) Organizer, and serve as Knowledge Director of Data Visualization Society. When Mollie is not being a data nerd, she swing dances and bicycles around the city.
+
 <span id="skelton" class="anchor"></span>
 <img src="assets/skelton.png" width="100%" title="Chad Skelton: An Introduction to the Data Visualization Society"  alt="Chad Skelton: An Introduction to the Data Visualization Society"/>
 **SPEAKER**: [Chad Skelton](http://www.chadskelton.com/) ([@chadskelton](http://twitter.com/chadskelton)), Kwantlen Polytechnic University
@@ -117,7 +122,7 @@ Joey is a cofounder and the design lead at Darkhorse Analytics. A data visualiza
 
 <span id="thomas" class="anchor"></span>
 <img src="assets/thomas.png" width="100%" title="Amber Thomas: Things We've Learned from Telling the 'Fun' Data Stories"  alt="Amber Thomas: Things We've Learned from Telling the 'Fun' Data Stories"/>
-**SPEAKER**: Amber Thomas ([@ProQuesAsker](http://twitter.com/ProQuesAsker)), [The Pudding](https://pudding.cool/)
+**SPEAKER**: [Amber Thomas](https://amber.rbind.io/) ([@ProQuesAsker](http://twitter.com/ProQuesAsker)), [The Pudding](https://pudding.cool/)
 
 **DESCRIPTION**: When we talk about topics that are debated in culture, you may immediately think of heated, divisive topics publicly debated during political campaigns. Or perhaps you're thinking more of a low-key dispute between friends over beer. At [The Pudding](https://pudding.cool/), an online editorial for visually-led stories, we focus on adding data to both types of debate. The topics and even "serious-ness" of stories we choose to write about vary widely, and we are often asked why we continue to write about "fun" topics with so many more pressing matters at hand. In this talk, I will discuss how we tell stories, the things we've learned from telling "fun" stories, and why we think the internet is better with both.
 
@@ -125,7 +130,7 @@ Joey is a cofounder and the design lead at Darkhorse Analytics. A data visualiza
 
 <span id="venkataswamy" class="anchor"></span>
 <img src="assets/venkataswamy.png" width="100%" title="Meghana Venkataswamy + Johanna Fulda: Visualizing Opportunity"  alt="Meghana Venkataswamy + Johanna Fulda: Visualizing Opportunity"/>
-**SPEAKER**: Meghana Venkataswamy + Johanna Fulda ([@jofu_](http://twitter.com/jofu_)), [Clir Renewables](http://clir.eco)
+**SPEAKER**: Meghana Venkataswamy + [Johanna Fulda](http://www.johannafulda.de/) ([@jofu_](http://twitter.com/jofu_)), [Clir Renewables](http://clir.eco)
 
 **DESCRIPTION**: Clir is a renewable energy optimization and reporting software that increases the performance and profitability of renewable energy production through our software as a service. We bring together all aspects of renewable energy engineering including data integrity, data analytics, modeling, turbine/panel engineering, control engineering and reporting in a cloud-based application. This talk will demonstrate how our clients use data visualizations to spot abnormalities. Those can range from simple, easily identifiable problems to complex, multi dimensional issues that need deeper investigation by our internal data science team. We’ll show how clients and data scientists alike can use Clir’s tools to identify anomalies at the wind farms, find the root cause of the issue and figure out the optimization potential. We will show examples of how anomaly detection algorithms and smart data visualizations can highlight issues otherwise hidden in massive amounts of SCADA data.
 

@@ -15,11 +15,3 @@
 <a target="" alt="Timothy Wojtaszek" title="Timothy Wojtaszek" href="#wojtaszek" style="top: 67%; left: 75%; width: 25%; height: 33%;">
 
 </div>
-
-<span id="pettit" class="anchor"></span>
-<img src="assets/pettit.png" width="100%" title="Mollie Pettit: An Introduction to the Data Visualization Society"  alt="Mollie Pettit: An Introduction to the Data Visualization Society"/>
-**SPEAKER**: Mollie Pettit, Netflix | [@mollzmp](http://twitter.com/mollzmp)
-
-**DESCRIPTION**: The Data Visualization Society aims to collect and establish best practices, fostering a community that supports members as they grow and develop data visualization skills. As data grows more central to our personal and professional lives, the practice of data visualization becomes ever more important.
-
-**SPEAKER BIO**: Mollie tells stories through the creation of interactive data visualizations. Her data data science background is wielded to find interesting and not-so-obvious insights within the data, prepare the data, and be thoughtful about the visual representation of statistical nuances within the data. She is also passionate about teaching data visualization and d3.js via workshops and corporate trainings.
