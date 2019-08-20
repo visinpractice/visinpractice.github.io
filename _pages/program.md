@@ -33,22 +33,22 @@ To attend VisInPractice 2019, you must [register for the IEEE VIS Conference](ht
 # At-a-Glance Schedule
 
 **Session1**: 9:00 - 10:30
-* TBD (3 talks)
+* Speaker order TBD (3 talks)
 
 __Morning coffee break__
 
 **Session 2**: 10:50 - 12:20
-* TBD (3 talks)
+* Speaker order TBD (2 talks followed by a panel)
 
 __Lunch break__
 
 **Session 3**: 14:20 - 15:50
-* TBD (3 talks)
+* Speaker order TBD (3 talks)
 
 __Afternoon coffee break__
 
 **Session 4**: 16:10 - 17:40 
-* TBD (2 talks followed by a panel)
+* Speaker order TBD (3 talks)
 
 
 <span id="talks" class="anchor"></span>
@@ -108,7 +108,7 @@ Joey is a cofounder and the design lead at Darkhorse Analytics. A data visualiza
 <img src="assets/pettit.png" width="100%" title="Mollie Pettit: Introducing the Data Visualization Society"  alt="Mollie Pettit: An Introducing the Data Visualization Society"/>
 **SPEAKER**: [Mollie Pettit](http://guacamollie.com/) ([@mollzmp](http://twitter.com/mollzmp)), Netflix
 
-**DESCRIPTION**: [The Data Visualization Society](https://www.datavisualizationsociety.com/) less than a year ago, and yet so much has happened. Mollie will discuss what spurred the decision to create the society, what's been accomplished so far, and some of the difficulties along the way. She will also discuss the annual data visualization survey results and what insights it reveals about the data visualization profession.
+**DESCRIPTION**: Formed less than a year ago, [The Data Visualization Society](https://www.datavisualizationsociety.com/) has grown from three people around a coffee table, to an official global Non-Profit organization with more than 7,000 members.  Mollie will discuss what spurred the decision to create the society, what's been accomplished so far, and some of the difficulties along the way. Her talk will include a summary of the annual data visualization survey results and what insights it reveals about the data visualization profession.
 
 **SPEAKER BIO**: Mollie is a Senior Data Visualization Engineer with Netflix. Previously, Mollie worked as a data visualization contractor, a d3.js instructor with Northwestern University and Metis, and as a data scientist with Datascope Analytics. Mollie's joy at being involved with data viz community endeavors has led her to found and organize [Chicago Data Viz Community Meetup](https://www.meetup.com/Chicago-Data-Viz-Community/); volunteer as [VisFest](http://visfest.com/) Organizer, and serve as Knowledge Director of Data Visualization Society. When Mollie is not being a data nerd, she swing dances and bicycles around the city.
 
