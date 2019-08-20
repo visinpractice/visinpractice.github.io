@@ -32,23 +32,33 @@ To attend VisInPractice 2019, you must [register for the IEEE VIS Conference](ht
 
 # At-a-Glance Schedule
 
+The order of speakers will be announced in September.
+
 **Session1**: 9:00 - 10:30
-* Speaker order TBD (3 talks)
+* Talk 1
+* Talk 2
+* Talk 3
 
 __Morning coffee break__
 
 **Session 2**: 10:50 - 12:20
-* Speaker order TBD (2 talks followed by a panel)
+* Talk 4
+* Talk 5
+* Panel (panelists to be announced in September)
 
 __Lunch break__
 
 **Session 3**: 14:20 - 15:50
-* Speaker order TBD (3 talks)
+* Talk 6
+* Talk 7
+* Talk 8
 
 __Afternoon coffee break__
 
 **Session 4**: 16:10 - 17:40 
-* Speaker order TBD (3 talks)
+* Talk 9
+* Talk 10
+* Talk 11
 
 
 <span id="talks" class="anchor"></span>
