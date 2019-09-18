@@ -1,7 +1,7 @@
 # Important dates
 
 [IEEE VIS Early Registration](http://ieeevis.org/year/2019/info/registration/conference-registration)
-: September 20 2019
+: September 20, 2019
 
 VisInPractice at [IEEE VIS](http://ieeevis.org)
 : October 21, 2019
