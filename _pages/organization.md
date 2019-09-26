@@ -12,7 +12,7 @@ title: Organization
 **Email**: [vip@ieeevis.org](mailto:vip@ieeevis.org)
 
 * **Daniela Oelke**, Siemens AG
-* **Matthew Brehmer**, mattbrehmer.ca
+* **Matthew Brehmer**, Tableau
 * **Matthew Larsen**, Lawrence Livermore National Laboratory
 
 Sketches in banner by graphical recording artist [Benjamin Felis](https://benjaminfelis.com/).
