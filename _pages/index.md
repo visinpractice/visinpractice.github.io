@@ -7,7 +7,7 @@ title: Home
 ---
 {::options parse_block_html="true" /}
 
-VisInPractice at **[IEEE VIS 2019](http://ieeevis.org)** will feature invited talks by visualization practitioners on **Monday, October 21st, 2019** in **Vancouver, BC, Canada** at the Vancouver Convention Centre in **Ballroom B**. Meet the speakers:
+VisInPractice at **[IEEE VIS 2019](http://ieeevis.org)** featured invited talks by visualization practitioners on **Monday, October 21st, 2019** in **Vancouver, BC, Canada** at the Vancouver Convention Centre in **Ballroom B**. Our speakers included:
 
 <div class="imagemap">
 <img src="/assets/speakers.png" width="100%" title="VisInPractice 2019 talk series speakers"  alt="VisInPractice 2019 talk series speakers">
@@ -26,6 +26,8 @@ VisInPractice at **[IEEE VIS 2019](http://ieeevis.org)** will feature invited ta
 
 </div>
 
-The **[VisInPractice program](program.html)** is an opportunity for visualization practitioners and researchers to meet and share experiences, insights, and ideas in applying visualization and visual analytics to real use cases.
+The **[VisInPractice program](program.html)** provided an opportunity for visualization practitioners and researchers to meet and share experiences, insights, and ideas in applying visualization and visual analytics to real use cases.
 
-To attend VisInPractice 2019, you must [register for the IEEE VIS Conference](http://ieeevis.org/year/2019/info/registration/conference-registration). Unlike most other events at IEEE VIS, VisInPractice talks have no associated papers.
+If you missed VisInPractice 2019, all of the talks were recorded: **[watch them here](program.html)**. Unlike most other events at IEEE VIS, VisInPractice talks have no associated papers.
+
+VisInPractice 2020 will take place at **[VIS 2020 in Salt Lake City](http://ieeevis.org/year/2020/welcome)** (October 26 - 30, 2020).
