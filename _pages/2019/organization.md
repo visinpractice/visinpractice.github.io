@@ -3,22 +3,20 @@ layout: default
 title: Organization
 ---
 
-# The VisInPractice 2020 Team:
+# The VisInPractice 2019 Organizing Team:
 
 {::options parse_block_html="true" /}
 
 <!-- <div class="left"> -->
 
-
-**Matthew Brehmer**, (Tableau Research)
-
-**Matt Larsen**, (Lawrence Livermore National Laboratory)
-
-**Zhicheng (Leo) Liu**, (Adobe Research)
-
-**Sean McKenna**, (Lucid)
-
 **Email**: [vip@ieeevis.org](mailto:vip@ieeevis.org)
+
+* **Daniela Oelke**, Siemens AG
+* **Matthew Brehmer**, Tableau
+* **Matthew Larsen**, Lawrence Livermore National Laboratory
+
+Sketches in banner by graphical recording artist [Benjamin Felis](https://benjaminfelis.com/).
+
 
 <!-- <img src="../assets/organizers.png" width="100%" title="Matthew Brehmer, Bernd Hentschel, Daniela Oelke"  alt="Matthew Brehmer, Bernd Hentschel, Daniela Oelke"/> -->
 

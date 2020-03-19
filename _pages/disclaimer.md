@@ -5,7 +5,8 @@ title: Disclaimer
 
 # Impressum
 
-VisInPractice 2019 organizing committee:
-* Matthew Brehmer (mattbrehmer.ca)
+VisInPractice 2020 organizing committee:
+* Matthew Brehmer (Tableau Research)
 * Matt Larsen (Lawrence Livermore National Laboratory)
-* Daniela Oelke (Siemens Research)
+* Zhicheng (Leo) Liu (Adobe Research)
+* Sean McKenna (Lucid)
