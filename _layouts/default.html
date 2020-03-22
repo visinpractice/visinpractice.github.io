@@ -7,7 +7,8 @@
 
   <header>
     <aside>
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 526 129" style="enable-background:new 0 0 526 129;" xml:space="preserve">
+      <a href="http://ieeevis.org">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 526 129" style="enable-background:new 0 0 526 129;" xml:space="preserve">
         <style type="text/css">
           .st0{fill:#C42026;}
           .st1{fill:#DA4726;}
@@ -33,9 +34,95 @@
           <path class="st2" d="M466.1,68v-0.2c0-18.6,10.3-34.4,26.1-34.4S518,49,518,67.7v0.2c0,18.6-10.2,34.4-26,34.4   C476.1,102.2,466.1,86.6,466.1,68z M510.8,68v-0.2c0-14.5-7.4-27.5-18.8-27.5c-11.5,0-18.7,12.7-18.7,27.4v0.2   c0,14.5,7.4,27.5,18.9,27.5C503.6,95.4,510.8,82.6,510.8,68z"/>
         </g>
         </svg>
+      </a>
     </aside>
-    <article>
-      <h1>VisInPractice 2020</h1>
+    <article id="canvas">
+      
+      <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script> 
+      <script type="text/javascript">
+
+      let canvas = document.getElementById('canvas');
+      let rect = canvas.getBoundingClientRect();
+      let w = rect.width;
+      let h = 75;
+      let font = 'Fira Sans';
+
+      let c;
+      let angle = 0;
+      let angleSpeed = 1;
+      let stepSize = 5;
+      let posX,
+          posY,
+          direction;
+
+
+      function setup() {        
+        let canvas = createCanvas(w, h);
+        canvas.parent('canvas');
+        textFont(font);
+        textAlign(LEFT, CENTER);
+        colorMode(RGB,255,255,255,1);
+        frameRate(15);
+        fill(color(255,255,255,0));
+        posX = random(0,w);
+        posY = random(0,h);
+      }
+
+      function windowResized () {
+        canvas = document.getElementById('canvas');
+        rect = canvas.getBoundingClientRect();
+        width = rect.width;
+        h = 75;
+        resizeCanvas(width, height);   
+      }      
+
+      function draw() {
+
+        if (frameCount % 600 == 0){
+          clear();
+        }
+
+        direction = int(random(0, 3));
+
+        if (direction == 0) {
+          posX += stepSize;
+          posY -= stepSize;
+        }
+          else if (direction == 1) {
+          posX += stepSize;
+        } else if (direction == 2) {
+          posX += stepSize;
+          posY += stepSize;
+        }
+
+        if (posX > w) posX = 0;
+        if (posX < 0) posX = w;
+        if (posY < 0) posY = h;
+        if (posY > h) posY = 0;
+
+        push();
+        noFill();
+        strokeWeight(1);
+        translate(posX,posY);
+        // rotate(radians(angle));
+        let r = map((frameCount % 15),0,14,125,245);       
+        stroke(color(r,171,161,0.15));
+        let startAngle = 0;
+        // map(angle % 360,0,359,0.5 * PI, PI); 
+        let endAngle = 2 * PI;
+        startAngle + map((frameCount % 15),0,14,0.5 * PI,PI); 
+        let d = map((frameCount % 15),0,14,h,2 * h); 
+        arc(0,0,d,d,startAngle,endAngle);
+        pop();
+
+        angle += angleSpeed;
+        textSize(60);
+        strokeWeight(0);
+        fill(color(196,32,38,1));
+        text('VisInPractice', 0, h / 2);
+      }
+     
+      </script>
     </article>
   </header>
 
