@@ -60,7 +60,7 @@
         let canvas = createCanvas(w, h);
         canvas.parent('canvas');
         textFont(font);
-        textAlign(LEFT, CENTER);
+        textAlign(CENTER, CENTER);
         colorMode(RGB,255,255,255,1);
         frameRate(15);
         fill(color(255,255,255,0));
@@ -71,7 +71,7 @@
       function windowResized () {
         canvas = document.getElementById('canvas');
         rect = canvas.getBoundingClientRect();
-        width = rect.width;
+        w = rect.width;
         h = 75;
         resizeCanvas(width, height);   
       }      
@@ -116,10 +116,10 @@
         pop();
 
         angle += angleSpeed;
-        textSize(60);
+        textSize(50);
         strokeWeight(0);
         fill(color(196,32,38,1));
-        text('VisInPractice', 0, h / 2);
+        text('VisInPractice', w / 2, h / 2);
       }
      
       </script>
@@ -140,7 +140,7 @@
 
   <footer>
     <aside>
-      Last update: {{ page.last_modified_at | date: '%b %e, %Y' }}
+      Last update: March 2020
     </aside>
     <article>
        <span style="float: left; ">
