@@ -68,12 +68,23 @@
         posY = random(0,h);
       }
 
+      window.onresize = function(e) {
+        console.log({
+          'resize': e
+        });
+        canvas = document.getElementById('canvas');
+        rect = canvas.getBoundingClientRect();
+        w = rect.width;
+        h = 75;
+        resizeCanvas(w, h);
+      };
+
       function windowResized () {
         canvas = document.getElementById('canvas');
         rect = canvas.getBoundingClientRect();
         w = rect.width;
         h = 75;
-        resizeCanvas(width, height);   
+        resizeCanvas(w, h);   
       }      
 
       function draw() {
