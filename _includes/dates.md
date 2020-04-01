@@ -1,7 +1,7 @@
 <!-- # Important dates
 
 VisInPractice at [IEEE VIS](http://ieeevis.org)
-: October 25 or 26, 2020 -->
+: October 26, 2020 -->
 
 <!-- ## Workshop
 

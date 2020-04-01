@@ -7,7 +7,7 @@ title: Home
 ---
 {::options parse_block_html="true" /}
 
-**VisInPractice 2020** will take place at **[VIS 2020 in Salt Lake City](http://ieeevis.org/)** (October 25 - 30), where it will feature invited talks and panel discussions with visualization practitioners. 
+**VisInPractice 2020** will take place on Monday, October 26 at the **[VIS 2020 Conference in Salt Lake City](http://ieeevis.org/)** (October 25 - 30), where it will feature invited talks and panel discussions with visualization practitioners. 
 
 VisInPractice provides an opportunity for practitioners and researchers to meet and share experiences, insights, and ideas in applying visualization and visual analytics to real use cases.
 
