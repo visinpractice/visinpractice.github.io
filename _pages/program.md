@@ -9,7 +9,7 @@ title: Program
 
 The VisInPractice 2020 program is dedicated to those interested in the **practical aspects of data visualization and visual analytics**. The focus is on how to solve real use cases, in contrast to the academic perspectives used in other [IEEE VIS](http://ieeevis.org) events. Unlike most other events at IEEE VIS, VisInPractice talks have no associated papers.
 
-VisInPractice 2020 will be **entirely virtual** in 2020. The event will be livestreamed via YouTube, and discussion platforms will be announced in the weeks leading up to the conference.
+**VisInPractice 2020** will take place **virtually** on Monday, October 26 at the **[VIS 2020 Conference](https://virtual.ieeevis.org/index.html)** between 10:00 and 15:30 MDT, where it will feature invited talks and a panel discussion with visualization practitioners. The [VisInPractice program](program.html) will be livestreamed on YouTube, and audience Q&A and discussion will take place on Discord (each session has dedicated channels, see below).
 
 **Click on a speaker to see their talk video and bio**:
 
@@ -25,17 +25,16 @@ VisInPractice 2020 will be **entirely virtual** in 2020. The event will be lives
 <a target="" alt="IEEE VIS 2020" title="IEEE VIS 2020" href="http://ieeevis.org" style="top: 80%; left: 0%; width: 100%; height: 20%;">
 
 </div>
-
-**Session1** (10:00 - 11:30 MDT) – moderated by Sean McKenna
+**Session1** (10:00 - 11:30 MDT) – moderated by Sean McKenna - [Youtube](https://www.youtube.com/watch?v=UqXqO4zx34s) / [Discord](https://discord.com/channels/741879515013316629/768305346883485736)
 * Alan Wilson: [More than a Style Guide: Data Visualization for Design Systems](#alan)
 * Julia Silge: [Data Visualization for Machine Learning Practitioners](#julia)
 * Jes Ford: [Machine Learning for Medicine: Visualizations that Accelerate Drug Discovery](#jes)
 
-**Session 2** (12:00 - 13:30 MDT) – moderated by Matthew Brehmer and Zhicheng 'Leo' Liu
+**Session 2** (12:00 - 13:30 MDT) – moderated by Matthew Brehmer and Zhicheng 'Leo' Liu - [Youtube](https://www.youtube.com/watch?v=ir1TMscZXHY) / [Discord](https://discord.com/channels/741879515013316629/768305367430987796)
 * Jane Zhang: [How Self-Employed Data Visualizaiton Designers Make a Living](#panel)
 * [Panel: Visualization Consulting & Freelancing](#panel) with Jane Zhang, Kristin Henry, and Curran Kelleher
 
-**Session 3** (14:00 - 15:30 MDT) – moderated by Matt Larsen
+**Session 3** (14:00 - 15:30 MDT) – moderated by Matt Larsen - [Youtube](https://protect-us.mimecast.com/s/KbhCCJ67YycolPp0hvfjn8?domain=youtu.be) / [Discord](https://discord.com/channels/741879515013316629/768305407848349736)
 * Matt Harrison: [Seaborn: One Python Visualization Tool to Rule Them All?](#matt)
 * Janet Iwasa: [Visualizing Molecules](#janet)
 * Steve Maas: [Visualization of Data and Results for the FEBio Finite Element Software](#steve)
