@@ -26,6 +26,6 @@ title: Home
 
 **Session 2**: 12:00 - 13:30 MDT: [Youtube](https://www.youtube.com/watch?v=ir1TMscZXHY) / [Discord](https://discord.com/channels/741879515013316629/768305367430987796)
 
-**Session 3**: 14:00 - 15:30 MDT: [Youtube](https://protect-us.mimecast.com/s/KbhCCJ67YycolPp0hvfjn8?domain=youtu.be) / [Discord](https://discord.com/channels/741879515013316629/768305407848349736)
+**Session 3**: 14:00 - 15:30 MDT: [Youtube](https://www.youtube.com/watch?v=QeNPPxZD0H4) / [Discord](https://discord.com/channels/741879515013316629/768305407848349736)
 
 VisInPractice provides an opportunity for practitioners and researchers to share experiences, insights, and ideas in applying visualization and visual analytics to real use cases.

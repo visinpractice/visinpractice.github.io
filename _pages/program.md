@@ -34,7 +34,7 @@ The VisInPractice 2020 program is dedicated to those interested in the **practic
 * Jane Zhang: [How Self-Employed Data Visualizaiton Designers Make a Living](#panel)
 * [Panel: Visualization Consulting & Freelancing](#panel) with Jane Zhang, Kristin Henry, and Curran Kelleher
 
-**Session 3** (14:00 - 15:30 MDT) – moderated by Matt Larsen - [Youtube](https://protect-us.mimecast.com/s/KbhCCJ67YycolPp0hvfjn8?domain=youtu.be) / [Discord](https://discord.com/channels/741879515013316629/768305407848349736)
+**Session 3** (14:00 - 15:30 MDT) – moderated by Matt Larsen - [Youtube](https://www.youtube.com/watch?v=QeNPPxZD0H4) / [Discord](https://discord.com/channels/741879515013316629/768305407848349736)
 * Matt Harrison: [Seaborn: One Python Visualization Tool to Rule Them All?](#matt)
 * Janet Iwasa: [Visualizing Molecules](#janet)
 * Steve Maas: [Visualization of Data and Results for the FEBio Finite Element Software](#steve)
