@@ -7,7 +7,7 @@ title: Home
 ---
 {::options parse_block_html="true" /}
 
-**VisInPractice 2020** will take place **virtually** on Monday, October 26 at the **[VIS 2020 Conference](https://virtual.ieeevis.org/index.html)** between 10:00 and 15:30 MDT, where it will feature invited talks and a panel discussion with visualization practitioners. The [VisInPractice program](program.html) will be livestreamed on YouTube, and audience Q&A and discussion will take place on Discord.
+**VisInPractice 2020** took place **virtually** on Monday, October 26 at the **[VIS 2020 Conference](https://virtual.ieeevis.org/index.html)**, where it featured invited talks and a panel discussion with visualization practitioners. The [VisInPractice program](program.html) will be livestreamed on YouTube and [recorded](program.).
 
 <div class="imagemap">
 <img src="/assets/visinpractice2020.png" width="100%" title="VisInPractice 2020 talk series speakers"  alt="VisInPractice 2020 talk series speakers">
@@ -22,10 +22,5 @@ title: Home
 <a target="" alt="IEEE VIS 2020" title="IEEE VIS 2020" href="http://ieeevis.org" style="top: 80%; left: 0%; width: 100%; height: 20%;">
 
 </div>
-**Session 1**: 10:00 - 11:30 MDT: [Youtube](https://www.youtube.com/watch?v=UqXqO4zx34s) / [Discord](https://discord.com/channels/741879515013316629/768305346883485736)
 
-**Session 2**: 12:00 - 13:30 MDT: [Youtube](https://www.youtube.com/watch?v=ir1TMscZXHY) / [Discord](https://discord.com/channels/741879515013316629/768305367430987796)
-
-**Session 3**: 14:00 - 15:30 MDT: [Youtube](https://www.youtube.com/watch?v=QeNPPxZD0H4) / [Discord](https://discord.com/channels/741879515013316629/768305407848349736)
-
-VisInPractice provides an opportunity for practitioners and researchers to share experiences, insights, and ideas in applying visualization and visual analytics to real use cases.
+The mandate of VisInPractice is to provide an opportunity for practitioners and researchers to share experiences, insights, and ideas in applying visualization and visual analytics to real use cases.

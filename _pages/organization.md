@@ -14,7 +14,7 @@ title: Organization
 
 **Matt Larsen**, (Lawrence Livermore National Laboratory)
 
-**Zhicheng (Leo) Liu**, (Adobe Research)
+**Zhicheng (Leo) Liu**, (University of Maryland)
 
 **Sean McKenna**, (Lucid)
 
