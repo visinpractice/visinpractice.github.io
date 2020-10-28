@@ -7,7 +7,7 @@ title: Home
 ---
 {::options parse_block_html="true" /}
 
-**VisInPractice 2020** took place **virtually** on Monday, October 26 at the **[VIS 2020 Conference](https://virtual.ieeevis.org/index.html)**, where it featured invited talks and a panel discussion with visualization practitioners. The [VisInPractice program](program.html) will be livestreamed on YouTube and [recorded](program.html).
+**VisInPractice 2020** took place **virtually** on Monday, October 26 at the **[VIS 2020 Conference](https://virtual.ieeevis.org/index.html)**, where it featured invited talks and a panel discussion with visualization practitioners. The [VisInPractice program](program.html) was both livestreamed on YouTube and [recorded](program.html).
 
 <div class="imagemap">
 <img src="/assets/visinpractice2020.png" width="100%" title="VisInPractice 2020 talk series speakers"  alt="VisInPractice 2020 talk series speakers">
