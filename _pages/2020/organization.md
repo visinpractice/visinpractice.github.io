@@ -3,7 +3,7 @@ layout: default
 title: Organization
 ---
 
-# The VisInPractice 2021 Team:
+# The VisInPractice 2020 Team:
 
 {::options parse_block_html="true" /}
 
@@ -16,7 +16,7 @@ title: Organization
 
 **Zhicheng (Leo) Liu**, (University of Maryland)
 
-**Sean McKenna**, (Lucid Software)
+**Sean McKenna**, (Lucid)
 
 **Email**: [vip@ieeevis.org](mailto:vip@ieeevis.org)
 

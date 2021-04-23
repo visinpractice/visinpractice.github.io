@@ -1,7 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+<html lang=" en ">
 
-{% include head.html %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>VisInPractice – Home</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="assets/main.css">
+</head>
+
 
 <body>
 
@@ -139,23 +149,114 @@
 
   <main>
     <aside>
-      {% include nav.html %}
+      <nav>
+  <h1>Menu</h1>
+  <ul>
+
+
+
+    <li class="current">
+      <a href="index.html">Home</a>
+    </li>
+
+
+
+    <li class="">
+      <a href="program.html">Program</a>
+    </li>
+
+
+
+    <li class="">
+      <a href="organization.html">Organization</a>
+    </li>
+
+    <li>
+      <a href="http://twitter.com/visinpractice">@visinpractice</a>
+    </li>
+    <li>
+      <a href="mailto:vip@ieeevis.org">Contact</a>
+    </li>
+  </ul>
+  <h1>Archive</h1>
+  <ul>
+
+
+    <li class="">
+      <a href="/assets/vip2019/index.html">VisInPractice 2019</a>
+    </li>
+
+
+
+    <li class="">
+      <a href="/assets/vip2018/index.html">VisInPractice 2018</a>
+    </li>
+
+
+
+    <li class="">
+      <a href="/assets/vip2017/index.html">VisInPractice 2017</a>
+    </li>
+
+  </ul>
+
+</nav>
       <hr />
-      {% capture my_include %}{% include dates.md %}{% endcapture %}
-      {{ my_include | markdownify }}
+
+      <!-- # Important dates
+
+VisInPractice at [IEEE VIS](http://ieeevis.org)
+: October 26, 2020 -->
+
+<!-- ## Workshop
+
+Half-day workshop
+: October 2, 2017
+
+## Panel
+
+Increasing the Impact of Visualization Research
+: October 3, 2017
+
+## Posters
+
+VIS main poster session
+: October 4, 2017 -->
+
     </aside>
     <article>
-      {{ content }}
+
+<p><strong>VisInPractice 2020</strong> took place <strong>virtually</strong> on Monday, October 26 at the <strong><a href="https://virtual.ieeevis.org/index.html">VIS 2020 Conference</a></strong>, where it featured invited talks and a panel discussion with visualization practitioners. The <a href="program.html">VisInPractice program</a> was both livestreamed on YouTube and <a href="program.html">recorded</a>.</p>
+
+<div class="imagemap">
+  <p><img src="assets/visinpractice2020.png" width="100%" title="VisInPractice 2020 talk series speakers" alt="VisInPractice 2020 talk series speakers" />
+<a target="" alt="VisInPractice 2020 Program" title="VisInPractice 2020 Program" href="program.html" style="top: 0%; left: 0%; width: 100%; height: 20%;">
+<a target="" alt="Alan Wilson" title="Alan Wilson" href="program.html#alan" style="top: 20%; left: 0%; width: 33%; height: 20%;">
+<a target="" alt="Julia Silge" title="Julia Silge" href="program.html#julia" style="top: 40%; left: 0%; width: 33%; height: 20%;">
+<a target="" alt="Jes Ford" title="Jes Ford" href="program.html#jes" style="top: 60%; left: 0%; width: 33%; height: 20%;">
+<a target="" alt="Panel" title="Panel" href="program.html#panel" style="top: 20%; left: 33%; width: 33%; height: 60%;">
+<a target="" alt="Matt Harrison" title="Matt Harrison" href="program.html#matt" style="top: 20%; left: 67%; width: 33%; height: 20%;">
+<a target="" alt="Janet Iwasa" title="Janet Iwasa" href="program.html#janet" style="top: 40%; left: 67%; width: 33%; height: 20%;">
+<a target="" alt="Steve Maas" title="Steve Maas" href="program.html#steve" style="top: 60%; left: 67%; width: 33%; height: 20%;">
+<a target="" alt="IEEE VIS 2020" title="IEEE VIS 2020" href="http://ieeevis.org" style="top: 80%; left: 0%; width: 100%; height: 20%;"></a></a></a></a></a></a></a></a></a></p>
+
+</div>
+
+<p>The mandate of VisInPractice is to provide an opportunity for practitioners and researchers to share experiences, insights, and ideas in applying visualization and visual analytics to real use cases.</p>
+
     </article>
   </main>
 
   <footer>
     <aside>
-      Last update: Apr 23 2021
+      Last update: Oct 27 2020
     </aside>
     <article>
        <span style="float: left; ">
-	   © 2021 VisInPractice, part of IEEE VIS 2021.
+	   © 2020 VisInPractice, part of IEEE VIS 2020.
+	   </span>
+	   <span style="float: right;">
+	   <a href="disclaimer.html">Disclaimer</a>
 	   </span>
     </article>
   </footer>
