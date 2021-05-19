@@ -11,7 +11,7 @@ description: >
 # Build settings
 markdown: kramdown
 
-gems:
+plugins:
   - jekyll-last-modified-at
 
 exclude:
