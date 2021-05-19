@@ -13,6 +13,7 @@ markdown: kramdown
 
 plugins:
   - jekyll-last-modified-at
+  - jekyll-redirect-from
 
 exclude:
   - Gemfile
