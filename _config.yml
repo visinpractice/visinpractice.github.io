@@ -11,8 +11,9 @@ description: >
 # Build settings
 markdown: kramdown
 
-gems:
+plugins:
   - jekyll-last-modified-at
+  - jekyll-redirect-from
 
 exclude:
   - Gemfile
